@@ -13,12 +13,12 @@ button{
     width: 100pt;
     box-shadow: #d6d2c4 5px 5px 7px;
     color: white;
-    font-weight: bold;
+    font-weight: 500;
 }
 
 #botaoCancelar{
-    background:  #d6d2c4;
-    color:  #89458f;
+    background:  #FFB81C;
+    color:  #000000;
 }
 
 #botaoEnter{
@@ -26,13 +26,13 @@ color: white;
 }
 
 button:hover{
-    background:#FFB81C;
+    background:#75277c;
     color: white;
 }
 
 #botaoCancelar:hover{
-    background: #89458f;
-    color: white;
+    background: #e79e00f6;
+    color: black;
 }
 
 input,select{
@@ -40,5 +40,13 @@ input,select{
     background: #E5E5E5;
     box-shadow: #d6d2c4 5px 5px 7px;
     height: 45px;
-
+    font-family: 'Roboto', sans-serif;
+    font-size: 12pt;
 }
+
+label{
+    font-family: 'Roboto', sans-serif;
+    font-size: 14pt;
+}
+
+

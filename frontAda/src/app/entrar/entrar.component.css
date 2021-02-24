@@ -13,14 +13,16 @@ button{
     border-radius: 10px;
     width: 100pt;
     box-shadow: #d6d2c4 5px 5px 7px;
+    font-weight: 500;
 }
 
 #botaoEnter{
 color: white;
 }
 
-button:hover{
+#botaoEnter:hover{
     background: #FFB81C;
+    color: black;
 }
 
 input{
@@ -28,4 +30,18 @@ input{
     background: #E5E5E5;
     box-shadow: #d6d2c4 5px 5px 7px;
     height: 45px;
+    font-family: 'Roboto', sans-serif;
+    font-size: 12pt;
 }
+
+label{
+    font-family: 'Roboto', sans-serif;
+    font-size: 14pt;
+}
+
+p{
+    font-family: 'Roboto', sans-serif;
+    font-size: 12pt;
+}
+
+
