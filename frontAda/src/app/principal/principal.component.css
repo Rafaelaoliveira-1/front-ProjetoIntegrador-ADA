@@ -2,15 +2,54 @@
     background-color: #89458F;
 }
 
+#divBusca{
+    background-color: white;
+    border:none;
+    border-radius:10px;
+    width:300px;
+  }
+
+#txtBusca{
+    float:left;
+    background-color:transparent;
+    padding-left:5px;
+    font-style:italic;
+    font-size:18px;
+    border:none;
+    height:32px;
+    width:260px;
+  }
+
+#btnBusca{
+    display: flex;
+    align-items: flex-end;
+}
+
+li{
+    list-style: none;
+}
+
 input{
     font-family: 'Roboto', sans-serif;
     font-style: italic;
+}
+
+.txt{
+    font-family: 'Montserrat', sans-serif;
+    margin-top: 5px;
+    font-weight: 600;
 }
 
 textarea{
     font-family: 'Roboto', sans-serif;
     font-style: italic;
     resize: none;
+    border-radius: 15px;
+}
+
+
+.roboto{
+    font-family: 'Roboto', sans-serif;
 }
 
 .botaoTema{
@@ -28,8 +67,18 @@ textarea{
     border-radius: 15px;
     font-family: 'Montserrat', sans-serif;
     letter-spacing: 1px;
-    
+       
 }
+
+.botaoApagar{
+    background-color: rgb(250, 56, 56);
+    color: white;
+    font-weight: 500;
+    border-radius: 15px;
+    font-family: 'Montserrat', sans-serif;
+    letter-spacing: 1px;
+}
+
 /* Perfil */
 .bg-roxo {
     background-color: #CD9CCC;
@@ -83,4 +132,37 @@ textarea{
 
 .bs {
     box-shadow: #000000 2px 2px 5px;
+}
+
+.modalTema{
+    border-radius: 15px;
+}
+
+.footer{
+    background-color: #89458F;
+    height: 55px;
+}
+
+.mont{
+    font-family: 'Montserrat', sans-serif; 
+}
+
+.card-back{
+    background-color: #F0F0F0;
+    border-radius: 20px;
+    box-shadow: #acacac 4px 4px 8px;
+}
+
+.insti{
+    font-family: 'Old Standard TT', serif;
+}
+
+.card-title{
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+}
+
+
+.card-text{
+    font-family: 'Roboto', sans-serif;
 }
