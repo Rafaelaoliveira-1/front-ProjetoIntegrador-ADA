@@ -1,0 +1,32 @@
+.back{
+    background-color: #89458F;
+}
+
+input{
+    font-family: 'Roboto', sans-serif;
+    font-style: italic;
+}
+
+textarea{
+    font-family: 'Roboto', sans-serif;
+    font-style: italic;
+    resize: none;
+}
+
+.botaoTema{
+    background-color: #FFB81C;
+    font-weight: 700;
+    border-radius: 15px;
+    font-family: 'Montserrat', sans-serif;
+    letter-spacing: 1px;
+}
+
+.botaoPostar{
+    background-color: #89458F;
+    color: white;
+    font-weight: 500;
+    border-radius: 15px;
+    font-family: 'Montserrat', sans-serif;
+    letter-spacing: 1px;
+    
+}
