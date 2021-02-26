@@ -60,7 +60,7 @@ textarea{
     letter-spacing: 1px;
 }
 
-.botaoPostar{
+.botaoPostar, .botaoEditar {
     background-color: #89458F;
     color: white;
     font-weight: 500;
@@ -77,6 +77,61 @@ textarea{
     border-radius: 15px;
     font-family: 'Montserrat', sans-serif;
     letter-spacing: 1px;
+}
+
+/* Perfil */
+.bg-roxo {
+    background-color: #CD9CCC;
+}
+
+.perfil-fundo {
+    background-color: #89458F;
+    border-radius: 2rem 2rem 0rem 0rem;
+}
+
+.perfil-texto {
+    font-size: 15px;
+    border-radius: 2rem;
+    border-radius: 0rem 0rem 2rem 2rem;
+    line-height: 13px;
+    /* Vini hint*/
+}
+
+.nome {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.conexoes-postagens {
+    text-align: left;
+    padding-left: 35px;
+}
+
+.titulo-card {
+    padding: 8px;
+}
+/* Fim Perfil */ 
+
+/* Conexões */
+
+.conexoes {
+    border-radius: 2rem;
+    background-color: #CD9CCC;
+    box-shadow: #acacac 4px 4px 8px;
+}
+
+.fs-c {
+    font-size: 13px;
+}
+/* Fim Conexão*/
+
+/* Sombreamento */
+.sh {
+    box-shadow: #acacac 4px 4px 8px;
+}
+
+.bs {
+    box-shadow: #000000 2px 2px 5px;
 }
 
 .modalTema{
@@ -111,4 +166,3 @@ textarea{
 .card-text{
     font-family: 'Roboto', sans-serif;
 }
-
