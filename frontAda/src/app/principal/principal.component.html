@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-lg navbar-light back">
     <a class="navbar-brand" href="#">
-        <img src="../../assets/img/logo-cortado-roxo.png" style="height: 30pt;" alt="logo-ada-roxo">
+        <img src="../../assets/img/logo-cortado-roxo.png" style="height: 35pt;" alt="logo-ada-roxo">
     </a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
         aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -8,16 +8,15 @@
     </button>
 
     <div class="collapse navbar-collapse d-flex justify-content-center" id="navbarSupportedContent">
-        <ul class="navbar-nav">
-
-        </ul>
-        <form class="form-inline my-2 my-lg-0">
-            <input class="form-control mr-sm-2" style="width: 400pt;" type="text" placeholder="pesquisar..."
-                aria-label="Search">
-            <a href="">
-                <img src="../../assets/img/img-search.png" id="busca" style="height: 20px;" alt="">
-            </a>
-        </form>
+        <div id="divBusca" style="width: 440px;">
+            <form class="form-inline my-2 my-lg-0">
+                <input class="form-control mr-sm-2" id="txtBusca" style="width: 300pt; height: 35px;" type="text"
+                    placeholder="  pesquisar..." aria-label="Search">
+                <a href="">
+                    <img src="../../assets/img/img-search.png" id="btnBusca" style="height: 20px;" alt="">
+                </a>
+            </form>
+        </div>
     </div>
 
     <li class="nav-item dropdown mr-1">
@@ -108,29 +107,109 @@
             <p class="insti text-center" style="margin: 0%; font-size: 20px; font-weight: 600;">ADA 2021 © </p>
         </div>
 
-        <div class="col-md-6 bg-danger">
-            <div class="card" style="width: 40rem; height: 303px;">
-                <h5 class="pl-4 pt-1 mb-0">Criar Publicação</h5>
+        <!-- INICIO -->
+        <div class="col-md-6">
+            <div class="card-back card" style="width: 40rem; height: 303px;">
+                <h5 class="txt pl-4 pt-1 mb-0">Criar Publicação</h5>
                 <hr class="m-2">
                 <div class="card-body">
                     <!--
                         <input class="form-control mr-sm-2" style="width: 450pt; height: 150px;" type="text"
                         placeholder="No que você está pensando?" aria-label="Search">
                     -->
-                    <textarea class="form-control mr-sm-2" name="text" id="text" cols="30" rows="7"
+                    <textarea class="txtarea form-control mr-sm-2" name="text" id="text" cols="30" rows="7"
                         placeholder="No que você está pensando?"></textarea>
 
 
                     <div class="row d-flex justify-content-end mt-2">
-                        <button class="btn botaoTema mr-4">Escolher Tema</button>
+                        <button class="btn botaoTema mr-4" data-toggle="modal" data-target="#Temas">Escolher
+                            Tema</button>
                         <button class="btn botaoPostar mr-4">Postar</button>
                     </div>
                 </div>
             </div>
         </div>
+        <!-- FIM -->
 
         <div class="col-md-3 bg-success">
 
         </div>
     </div>
 </div>
+
+<footer class="footer mt-5">
+    <div class="row d-flex justify-content-center ">
+        <p class="text-center text-white pt-3">ADA 2021 ©</p>
+    </div>
+   
+</footer>
+
+
+
+
+
+
+<!-- Modal -->
+<div class="modal fade " id="Temas" tabindex="-1" role="dialog" aria-labelledby="TituloModalLongoExemplo"
+    aria-hidden="true">
+    <div class="modal-dialog " role="document">
+        <div class="modal-content modalTema">
+            <div class="modal-header">
+                <h5 class="modal-title Montserrat" id="TituloModalLongoExemplo">Escolher Tema</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <label class="roboto" for="tipoTema" style="font-weight: 600;">Escolha o tipo do tema:</label>
+                <select class="form-control roboto" name="tipoTema" id="tipoTema">
+                    <option value="Tema Livre">Tema Livre</option>
+                    <option value="Vaga">Vaga</option>
+                    <option value="Dúvida">Dúvida</option>
+                </select>
+
+                <hr>
+
+                <div class="row d-flex align-items-end">
+                    
+                    <div class="col-md-8">
+                        <label class="roboto" for="cadastroTema" style="font-weight: 600;">Cadastre um novo tema:</label>
+                        <input class="form-control" type="text" id="cadastroTema">
+                    </div>
+                    <div class="col-md-2">
+                        <button class="btn botaoPostar">Cadastrar</button>
+                    </div>
+                    
+                </div>
+
+                <table class="table table-hover mt-3">
+                    <thead>
+                      <tr>
+                        <th class="Montserrat" scope="col">Id</th>
+                        <th class="Montserrat" scope="col">Tema</th>
+                        <th class="text-right Montserrat" scope="col">Modificar</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <th scope="row">1</th>
+                        <td class="roboto">Mark</td>
+                        <td class="d-flex justify-content-end">
+                            <button class="btn botaoTema mr-2">Editar</button>
+                             <button class="btn botaoApagar">Deletar</button>
+                        </td>
+                      </tr>
+                    
+                    </tbody>
+                  </table>
+
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn botaoTema" data-dismiss="modal">Fechar</button>
+                <button type="button" class="btn botaoPostar">Salvar mudanças</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Modal -->
