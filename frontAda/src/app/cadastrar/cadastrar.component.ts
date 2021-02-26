@@ -9,7 +9,7 @@ import { AuthService } from '../service/auth.service';
   styleUrls: ['./cadastrar.component.css']
 })
 export class CadastrarComponent implements OnInit {
-
+  nome = window.document.getElementById('nome')
   validaNome: string
   validaSenha: string
   usuario: Usuario = new Usuario
@@ -44,6 +44,9 @@ export class CadastrarComponent implements OnInit {
 
    if(this.usuario.senha != this.validaSenha){
      alert('As senhas cadastradas não são iguais.')
+   }
+   else if(this.validaNome.length < 1){
+    alert('Preencha corretamente o campo nome!')
    }
    else{
      this.auth.cadastrar(this.usuario).subscribe((resp: Usuario) =>{
