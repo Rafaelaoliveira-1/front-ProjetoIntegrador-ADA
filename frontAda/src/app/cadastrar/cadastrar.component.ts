@@ -38,9 +38,6 @@ export class CadastrarComponent implements OnInit {
 
   cadastrar(){
    this.usuario.tipo = this.tipoUsuario
-    
-   console.log(this.validaSenha)
-   console.log(this.usuario.senha)
 
    if(this.usuario.senha != this.validaSenha){
      alert('As senhas cadastradas não são iguais.')

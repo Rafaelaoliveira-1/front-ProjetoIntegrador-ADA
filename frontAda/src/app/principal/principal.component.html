@@ -233,7 +233,7 @@
             </div>
             <div class="modal-body">
                 <label class="roboto" for="tipoTema" style="font-weight: 600;">Escolha o tipo do tema:</label>
-                <select class="form-control roboto" name="tipoTema" id="tipoTema">
+                <select class="form-control roboto" name="tipoTema" id="tipoTema" (change)="tipoTheme($event)"> 
                     <option value="Tema Livre">Tema Livre</option>
                     <option value="Vaga">Vaga</option>
                     <option value="Dúvida">Dúvida</option>
@@ -245,10 +245,10 @@
                     
                     <div class="col-md-8">
                         <label class="roboto" for="cadastroTema" style="font-weight: 600;">Cadastre um novo tema:</label>
-                        <input class="form-control" type="text" id="cadastroTema">
+                        <input [(ngModel)]='tema.descricaoTema' class="form-control" type="text" id="cadastroTema">
                     </div>
                     <div class="col-md-2">
-                        <button class="btn botaoPostar">Cadastrar</button>
+                        <button class="btn botaoPostar" (click)='cadastrar()'>Cadastrar</button>
                     </div>
                     
                 </div>
@@ -262,9 +262,9 @@
                       </tr>
                     </thead>
                     <tbody>
-                      <tr>
-                        <th scope="row">1</th>
-                        <td class="roboto">Mark</td>
+                      <tr *ngFor='let item of listaTema'>
+                        <th scope="row">{{item.id}}</th>
+                        <td class="roboto">{{item.descricaoTema}}</td>
                         <td class="d-flex justify-content-end">
                             <button class="btn botaoTema mr-2">Editar</button>
                              <button class="btn botaoApagar">Deletar</button>
