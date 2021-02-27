@@ -8,6 +8,7 @@ import { AppComponent } from './app.component';
 import { EntrarComponent } from './entrar/entrar.component';
 import { CadastrarComponent } from './cadastrar/cadastrar.component';
 import { PrincipalComponent } from './principal/principal.component';
+import { HomeComponent } from './home/home.component';
 
 
 @NgModule({
@@ -15,7 +16,8 @@ import { PrincipalComponent } from './principal/principal.component';
     AppComponent,
     EntrarComponent,
     CadastrarComponent,
-    PrincipalComponent
+    PrincipalComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
