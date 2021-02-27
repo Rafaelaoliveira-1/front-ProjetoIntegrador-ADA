@@ -1,168 +1,178 @@
-.back{
-    background-color: #89458F;
+.back {
+  background-color: #89458f;
 }
 
-#divBusca{
-    background-color: white;
-    border:none;
-    border-radius:10px;
-    width:300px;
-  }
-
-#txtBusca{
-    float:left;
-    background-color:transparent;
-    padding-left:5px;
-    font-style:italic;
-    font-size:18px;
-    border:none;
-    height:32px;
-    width:260px;
-  }
-
-#btnBusca{
-    display: flex;
-    align-items: flex-end;
+#divBusca {
+  background-color: white;
+  border: none;
+  border-radius: 10px;
+  width: 300px;
 }
 
-li{
-    list-style: none;
+#txtBusca {
+  float: left;
+  background-color: transparent;
+  font-size: 18px;
+  border: none;
+  height: 32px;
+  width: 260px;
 }
 
-input{
-    font-family: 'Roboto', sans-serif;
-    font-style: italic;
+#btnBusca {
+  display: flex;
+  align-items: flex-end;
 }
 
-.txt{
-    font-family: 'Montserrat', sans-serif;
-    margin-top: 5px;
-    font-weight: 600;
+li {
+  list-style: none;
 }
 
-textarea{
-    font-family: 'Roboto', sans-serif;
-    font-style: italic;
-    resize: none;
-    border-radius: 15px;
+input {
+  font-family: "Roboto", sans-serif;
 }
 
-
-.roboto{
-    font-family: 'Roboto', sans-serif;
+.txt {
+  font-family: "Montserrat", sans-serif;
+  margin-top: 5px;
+  font-weight: 600;
 }
 
-.botaoTema{
-    background-color: #FFB81C;
-    font-weight: 700;
-    border-radius: 15px;
-    font-family: 'Montserrat', sans-serif;
-    letter-spacing: 1px;
+textarea {
+  font-family: "Roboto", sans-serif;
+  resize: none;
+  border-radius: 15px;
+  color: black;
+}
+::-webkit-input-placeholder {
+  font-style: italic;
 }
 
-.botaoPostar, .botaoEditar {
-    background-color: #89458F;
-    color: white;
-    font-weight: 500;
-    border-radius: 15px;
-    font-family: 'Montserrat', sans-serif;
-    letter-spacing: 1px;
-       
+:-moz-placeholder {
+  font-style: italic;
 }
 
-.botaoApagar{
-    background-color: rgb(250, 56, 56);
-    color: white;
-    font-weight: 500;
-    border-radius: 15px;
-    font-family: 'Montserrat', sans-serif;
-    letter-spacing: 1px;
+::-moz-placeholder {
+  font-style: italic;
+}
+
+:-ms-input-placeholder {
+  font-style: italic;
+}
+
+.roboto {
+  font-family: "Roboto", sans-serif;
+}
+
+.botaoTema {
+  background-color: #ffb81c;
+  font-weight: 700;
+  border-radius: 15px;
+  font-family: "Montserrat", sans-serif;
+  letter-spacing: 1px;
+}
+
+.botaoPostar,
+.botaoEditar {
+  background-color: #89458f;
+  color: white;
+  font-weight: 500;
+  border-radius: 15px;
+  font-family: "Montserrat", sans-serif;
+  letter-spacing: 1px;
+}
+
+.botaoApagar {
+  background-color: rgb(250, 56, 56);
+  color: white;
+  font-weight: 500;
+  border-radius: 15px;
+  font-family: "Montserrat", sans-serif;
+  letter-spacing: 1px;
 }
 
 /* Perfil */
 .bg-roxo {
-    background-color: #CD9CCC;
+  background-color: #cd9ccc;
 }
 
 .perfil-fundo {
-    background-color: #89458F;
-    border-radius: 2rem 2rem 0rem 0rem;
+  background-color: #89458f;
+  border-radius: 2rem 2rem 0rem 0rem;
 }
 
 .perfil-texto {
-    font-size: 15px;
-    border-radius: 2rem;
-    border-radius: 0rem 0rem 2rem 2rem;
-    line-height: 13px;
-    /* Vini hint*/
+  font-size: 15px;
+  border-radius: 2rem;
+  border-radius: 0rem 0rem 2rem 2rem;
+  line-height: 13px;
+  /* Vini hint*/
 }
 
 .nome {
-    font-size: 20px;
-    font-weight: bold;
+  font-size: 20px;
+  font-weight: bold;
 }
 
 .conexoes-postagens {
-    text-align: left;
-    padding-left: 35px;
+  text-align: left;
+  padding-left: 35px;
 }
 
 .titulo-card {
-    padding: 8px;
+  padding: 8px;
 }
-/* Fim Perfil */ 
+/* Fim Perfil */
 
 /* Conexões */
 
 .conexoes {
-    border-radius: 2rem;
-    background-color: #CD9CCC;
-    box-shadow: #acacac 4px 4px 8px;
+  border-radius: 2rem;
+  background-color: #cd9ccc;
+  box-shadow: #acacac 4px 4px 8px;
 }
 
 .fs-c {
-    font-size: 13px;
+  font-size: 13px;
 }
 /* Fim Conexão*/
 
 /* Sombreamento */
 .sh {
-    box-shadow: #acacac 4px 4px 8px;
+  box-shadow: #acacac 4px 4px 8px;
 }
 
 .bs {
-    box-shadow: #000000 2px 2px 5px;
+  box-shadow: #000000 2px 2px 5px;
 }
 
-.modalTema{
-    border-radius: 15px;
+.modalTema {
+  border-radius: 15px;
 }
 
-.footer{
-    background-color: #89458F;
-    height: 55px;
+.footer {
+  background-color: #89458f;
+  height: 55px;
 }
 
-.mont{
-    font-family: 'Montserrat', sans-serif; 
+.mont {
+  font-family: "Montserrat", sans-serif;
 }
 
-.card-back{
-    background-color: #F0F0F0;
-    border-radius: 20px;
-    box-shadow: #acacac 4px 4px 8px;
+.card-back {
+  background-color: #f0f0f0;
+  border-radius: 20px;
+  box-shadow: #acacac 4px 4px 8px;
 }
 
-.insti{
-    font-family: 'Old Standard TT', serif;
+.insti {
+  font-family: "Old Standard TT", serif;
 }
 
-.card-title{
-    font-family: 'Montserrat', sans-serif;
-    font-weight: 600;
+.card-title {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 600;
 }
 
-
-.card-text{
-    font-family: 'Roboto', sans-serif;
+.card-text {
+  font-family: "Roboto", sans-serif;
 }
