@@ -15,6 +15,32 @@ a:hover {
   text-decoration: none;
   color: #3a0d3d;
 }
+
+.conhecaMais{
+  color: white;
+  font-weight: bold;
+}
+
+.conhecaMais:hover{
+  color: #f2c7f5;
+  font-weight: bold;
+}
+
+.acessoLinkedin{
+  color: #211122;
+  font-weight: bold;
+}
+
+.acessoLinkedin:hover{
+  text-decoration: none;
+  color:#3e0f42;
+}
+
+.teste:hover{
+  transform: scale(1.1);
+  transition: transform 0.1s ease-out;
+}
+
 .btn-lg {
   background-color: #89458f;
   border-color: #89458f;
@@ -22,6 +48,7 @@ a:hover {
   padding: 10px 80px;
   font-weight: bold;
 }
+
 .btn-lg:hover {
   background: #ffb81c;
   border-color: #ffb81c;
