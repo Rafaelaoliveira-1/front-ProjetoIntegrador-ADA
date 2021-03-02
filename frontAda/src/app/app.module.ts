@@ -9,6 +9,7 @@ import { EntrarComponent } from './entrar/entrar.component';
 import { CadastrarComponent } from './cadastrar/cadastrar.component';
 import { PrincipalComponent } from './principal/principal.component';
 import { HomeComponent } from './home/home.component';
+import { EditUsuarioComponent } from './edit/edit-usuario/edit-usuario.component';
 
 
 @NgModule({
@@ -17,7 +18,8 @@ import { HomeComponent } from './home/home.component';
     EntrarComponent,
     CadastrarComponent,
     PrincipalComponent,
-    HomeComponent
+    HomeComponent,
+    EditUsuarioComponent
   ],
   imports: [
     BrowserModule,
