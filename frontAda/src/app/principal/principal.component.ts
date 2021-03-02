@@ -15,12 +15,20 @@ export class PrincipalComponent implements OnInit {
   listaTema:Tema[]
   tipoTema: string
 
+  tipoPostagem: string
+
+  nomeCompleto = environment.nomeCompleto
+  foto = environment.foto
+  cargo = environment.cargo
+
+
   constructor(
     private router: Router,
     private TemaService: TemaService
   ) {}
 
   ngOnInit() {
+
     if (environment.token == '') {
       alert('Sua sessão expirou!')
       this.router.navigate(['/entrar'])
@@ -48,7 +56,5 @@ export class PrincipalComponent implements OnInit {
       this.tema = new Tema()
     })
   }
-
-
 
 }
