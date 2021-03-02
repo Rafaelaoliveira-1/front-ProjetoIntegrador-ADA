@@ -30,3 +30,83 @@
   input {
     font-family: "Roboto", sans-serif;
   }
+
+/* Conexões */
+.conexoes {
+  border-radius: 2rem;
+  background-color: #cd9ccc;
+  box-shadow: #acacac 4px 4px 8px;
+}
+
+.fs-c {
+  font-size: 13px;
+}
+
+/* Fim Conexão*/
+
+/* Sombreamento */
+.sh {
+  box-shadow: #acacac 4px 4px 8px;
+}
+
+.bs {
+  box-shadow: #000000 2px 2px 5px;
+}
+
+.modalTema {
+  border-radius: 15px;
+}
+
+.footer {
+  background-color: #89458f;
+  height: 55px;
+}
+
+.mont {
+  font-family: "Montserrat", sans-serif;
+}
+
+.card-back {
+  background-color: #f0f0f0;
+  border-radius: 20px;
+  box-shadow: #acacac 4px 4px 8px;
+}
+
+.insti {
+  font-family: "Old Standard TT", serif;
+}
+
+.card-title {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 600;
+}
+
+.card-text {
+  font-family: "Roboto", sans-serif;
+} 
+
+/* BOTAO EDITAR */
+.botaoEditar, .botaoPostar {
+  background-color: #89458f;
+  color: white;
+  font-weight: 500;
+  border-radius: 15px;
+  font-family: "Montserrat", sans-serif;
+  letter-spacing: 1px;
+}
+
+/* BOTAO DELETAR */
+
+.botaoDeletar {
+  background-color: #ffb81c;
+  font-weight: 700;
+  border-radius: 15px;
+  font-family: "Montserrat", sans-serif;
+  letter-spacing: 1px;
+}
+
+/* ================================================================== */
+
+.perfil-fundo {
+  border-radius: 2rem;
+}
