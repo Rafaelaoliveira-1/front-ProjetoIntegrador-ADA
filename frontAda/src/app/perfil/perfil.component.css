@@ -1,0 +1,32 @@
+.back {
+    background-color: #89458f;
+  }
+  
+  #divBusca {
+    background-color: white;
+    border: none;
+    border-radius: 10px;
+    width: 300px;
+  }
+  
+  #txtBusca {
+    float: left;
+    background-color: transparent;
+    font-size: 18px;
+    border: none;
+    height: 32px;
+    width: 260px;
+  }
+  
+  #btnBusca {
+    display: flex;
+    align-items: flex-end;
+  }
+  
+  li {
+    list-style: none;
+  }
+  
+  input {
+    font-family: "Roboto", sans-serif;
+  }
