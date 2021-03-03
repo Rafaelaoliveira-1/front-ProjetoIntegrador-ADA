@@ -34,62 +34,98 @@
 </nav>
 <!-- FIM NAVEGADOR -->
 
-<div class="container">
-
+<!-- MEU PERFIL -->
     <div class="row">
+        <!-- COLUNA MENU & POSTAGENS -->
+        <div class="col-md-9 bg-danger">
+     
+            <div class="card perfil-fundo d-flex ml-3 mt-5">
+            
+                <div class="card-header mt-4">
+                                  
+                        <div class="row d-flex flex-row">
+        
+                            <img src="{{foto}}" alt=""  width="180px" height="180px" class="img-fluid rounded-circle bs ml-4 mt-3">
+        
+                            <div class="d-flex flex-column ml-4 my-auto">
 
-        <div class="col-md-9">
+                                    <h3 class="mb-0">{{nomeCompleto}}</h3> 
+                                    <h4 class="mt-0">{{cargo}}</h4>
+
+                                <div class="row">
+                                    <p>
+                                        25 conexões
+                                        12 postagens
+                                    </p>
+
+                                </div>    
+
+                                <div class="d-flex justify-content-end mr-5 ">
+        
+                                    <button class="btn botaoPostar d-flex justify-content-end">Editar</button>
+        
+                                </div>
+
+                            </div>
 
 
-
-            <!-- Parte de cima do card com o tamanho para caber com a parte de baixo, e define as bordas de cima-->
-            <div class="card perfil-fundo sh mt-5">
-                <!-- Parque que centraliza a foto -->
-                <div class="card-body text-center">
-                    <!-- Parte da imagem com a medida definida e arredondamento da imagem -->
-                    <img src="{{foto}}" alt="" width="150px" height="150px" class="img-fluid rounded-circle bs">
-                 
-                </div>
-    
-            </div>
-            <!-- Parte de baixo do card com tamanho para caber com a parte de cima-->
-            <div class="card perfil-texto bg-roxo sh card-baixo">
-                <!-- Parter que centraliza os textos do card -->
-                <div class="card-body text-center">
-                    <!-- Parte de baixo do card com tamanho para caber com a parte de cima, e define as bordas de baixo -->
-                    <div class="perfil-texto">
-                        
-                        <div class="titulo-card">
-    
-                            <!-- Parte que define o font-size de 20px-->
-                            <p class="nome"> {{nomeCompleto}} </p>
-                            <!-- Parte do cargo -->
-                            <p> {{cargo}} </p>
-                            <!-- Parte que define o font-size de 15px-->
-                        
+        
                         </div>
-    
-                        <p class="conexoes-postagens"> 25 Conexões </p>
-                        
-                        <p class="conexoes-postagens"> 12 Postagens </p>
-                        <!-- Parte que exibe data de entrada -->
-                        <p> Ingressou em Março de 2021 </p>
-                
-                    </div>
-                    <!-- Botão editar para modificar o perfil do usuário -->
-                    <a class="btn botaoEditar" routerLink='/perfil'>Editar</a>
-    
+        
+                        <hr class="mt-3">
+        
+                </div>
+
+                <div class="card-body text-center">
+                    
+                    <h1>Minhas Postagens</h1>
+
+                    <div class="card-back card justify-content-center mt-5">
+
+                        <div class="row d-flex">
+        
+                            <img src="{{foto}}" alt=""  width="90px" height="90px" class="rounded-circle bs ml-4 mt-3">
+        
+                            <div class="d-flex flex-column ml-1 my-auto">
+        
+                                <h5 class="mb-0">{{nomeCompleto}}</h5> 
+                                <p class="mt-0"> {{cargo}} </p>
+        
+                            </div>
+        
+                            <div class="ml-auto mt-3 mr-5">
+        
+                                <button class="btn botaoDeletar mr-3">Deletar</button>
+                                <button class="btn botaoPostar">Editar</button>
+        
+                            </div>
+        
+                        </div>
+        
+                        <hr class=" d-flex justify-content-center mt-3">
+        
+                            <div class="card-body mt-0 pt-0">
+        
+                                <h5>Front-End</h5>
+        
+                                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Iure, ipsa. Mollitia recusandae in culpa, eveniet cum iste aliquid natus minus harum id earum pariatur reprehenderit modi eos! Nobis, dolorum eligendi! Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor, ea odit aliquam libero fuga numquam voluptatibus soluta minus earum, voluptas sequi placeat cumque quis vel culpa eligendi! Nobis, error dicta. Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate maiores minus possimus qui. Dolor in harum non placeat possimus enim. Officiis doloremque, nobis delectus consequuntur vitae aspernatur? Repellendus, voluptatibus eligendi.</p>
+        
+                            </div>
+                    
+                        </div>
+                    
+                <!-- FIM DA COLUNA 9-->
                 </div>
     
+                                    
             </div>
-
-
-
 
         </div>
 
-        <div class="col-md-3">
-
+   
+        <!-- COLUNA CONEXÕES-->
+        <div class="col-md-3 bg-success">
+           
             <div class="card conexoes mt-5" style="width: 310px; height: 520px;">
     
                 <h3 class="text-center pt-3 font-weight-bold">Conexões</h3> 
@@ -124,4 +160,3 @@
 
     </div>
 
-</div>
