@@ -11,7 +11,6 @@ import { environment } from 'src/environments/environment.prod';
 })
 export class EditUsuarioComponent implements OnInit {
 
-  id = environment.id
   foto = environment.foto
   usuario: Usuario = new Usuario
   idUser: number
@@ -26,6 +25,11 @@ export class EditUsuarioComponent implements OnInit {
 
     this.idUser = this.route.snapshot.params['id']
     this.findUserById(this.idUser)
+
+    console.log(environment.nomeCompleto)
+    console.log(environment.cargo)
+    console.log(environment.foto)
+    console.log(environment.link)
   }
 
   findUserById(id: number){
@@ -45,6 +49,5 @@ export class EditUsuarioComponent implements OnInit {
       environment.id = 0
       this.router.navigate(['/entrar'])
     })
-    
   }
 }
