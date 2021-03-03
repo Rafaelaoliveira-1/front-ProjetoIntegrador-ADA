@@ -12,7 +12,7 @@ import { TemaService } from '../service/tema.service';
 export class PrincipalComponent implements OnInit {
 
   tema:Tema = new Tema()
-  listaTema:Tema[]
+  listaTema: Tema[]
   tipoTema: string
 
   tipoPostagem: string
@@ -21,6 +21,7 @@ export class PrincipalComponent implements OnInit {
   foto = environment.foto
   cargo = environment.cargo
   id = environment.id
+  
 
 
   constructor(

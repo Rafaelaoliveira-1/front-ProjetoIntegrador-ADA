@@ -1,0 +1,92 @@
+.back {
+background-color: #89458f;
+}
+
+#divBusca {
+background-color: white;
+border: none;
+border-radius: 10px;
+width: 300px;
+}
+
+#txtBusca {
+float: left;
+background-color: transparent;
+font-size: 18px;
+border: none;
+height: 32px;
+width: 260px;
+}
+
+#btnBusca {
+display: flex;
+align-items: flex-end;
+}
+
+li {
+list-style: none;
+}
+
+.perfil-fundo {
+background-color: #89458f;
+border-radius: 2rem 2rem 0rem 0rem;
+}
+
+.perfil-texto {
+background-color: #cd9ccc;
+font-size: 15px;
+border-radius: 2rem;
+border-radius: 0rem 0rem 2rem 2rem;
+line-height: 13px;
+/* Vini hint*/
+}
+
+textarea {
+font-family: "Roboto", sans-serif;
+resize: none;
+border-radius: 15px;
+color: black;
+}
+
+.mont {
+font-family: "Montserrat", sans-serif;
+}
+
+.font-foot{
+font-family: "Montserrat", sans-serif;
+color: #89458f;
+font-weight: 600;
+}
+
+.footer {
+background-color: #89458f;
+height: 55px;
+}
+    
+#botaoCancelar{
+background:  #FFB81C;
+color:  #000000;
+font-weight: 500;
+border-radius: 15px;
+font-family: "Montserrat", sans-serif;
+letter-spacing: 1px;
+}
+
+#botaoEnter{
+color: white;
+}
+
+#botaoCancelar:hover{
+background: #e79e00f6;
+color: black;
+}
+
+.botaoPostar,
+.botaoEditar {
+background-color: #89458f;
+color: white;
+font-weight: 500;
+border-radius: 15px;
+font-family: "Montserrat", sans-serif;
+letter-spacing: 1px;
+}
