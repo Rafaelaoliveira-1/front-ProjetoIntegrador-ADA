@@ -37,59 +37,66 @@
 <!-- MEU PERFIL -->
     <div class="row">
         <!-- COLUNA MENU & POSTAGENS -->
-        <div class="col-md-9 bg-danger">
+        <div class="col-md-9">
      
             <div class="card perfil-fundo d-flex ml-3 mt-5">
             
-                <div class="card-header mt-4">
-                                  
-                        <div class="row d-flex flex-row">
-        
-                            <img src="{{foto}}" alt=""  width="180px" height="180px" class="img-fluid rounded-circle bs ml-4 mt-3">
-        
-                            <div class="d-flex flex-column ml-4 my-auto">
+                <div class="fundo-cima">
 
-                                    <h3 class="mb-0">{{nomeCompleto}}</h3> 
+                    <div class="card-header mt-4">
+                            
+                        <div class="d-flex justify-content-end">
+
+                            <button class="btn botaoEditarPerfil d-flex justify-content-end">Editar Perfil</button>
+
+                        </div>
+
+                            <div class="row d-flex flex-row ">
+            
+                                <img src="{{foto}}" alt=""  width="200px" height="200px" class="img-fluid rounded-circle bs ml-4">
+            
+                                <div class="d-flex flex-column ml-4 my-auto fontNomeCargo">
+                                        
+                                    <h1 class="mb-0 font-weight-bold">{{nomeCompleto}}</h1> 
                                     <h4 class="mt-0">{{cargo}}</h4>
 
-                                <div class="row">
-                                    <p>
-                                        25 conexões
+                                    <p class="fp">
+                                        <span class="pr-5">25 conexões</span>                                        
+                                        
+                                        <a class="pr-5 text-white" href="{{link}}" target="_blank">Link do Github</a>
+
+                                        Ingressou em Março de 2021 <br>
                                         12 postagens
                                     </p>
 
-                                </div>    
-
-                                <div class="d-flex justify-content-end mr-5 ">
-        
-                                    <button class="btn botaoPostar d-flex justify-content-end">Editar</button>
-        
                                 </div>
 
                             </div>
+                            
+                            <hr class="mt-3">
+                
+                    </div>   <!-- FIM CARD HEADER -->
 
-
-        
-                        </div>
-        
-                        <hr class="mt-3">
-        
                 </div>
 
-                <div class="card-body text-center">
+                <div class="card-body fundo-baixo">
                     
-                    <h1>Minhas Postagens</h1>
+                    <div class="text-center">
 
-                    <div class="card-back card justify-content-center mt-5">
+                        <h2 class="mont font-weight-bold">Minhas Postagens</h2>
+
+                    </div>
+
+                    <div class="card-back card  mt-5">
 
                         <div class="row d-flex">
         
                             <img src="{{foto}}" alt=""  width="90px" height="90px" class="rounded-circle bs ml-4 mt-3">
         
-                            <div class="d-flex flex-column ml-1 my-auto">
+                            <div class="d-flex flex-column ml-1 pl-3 mt-4">
         
-                                <h5 class="mb-0">{{nomeCompleto}}</h5> 
-                                <p class="mt-0"> {{cargo}} </p>
+                                <h5 >{{nomeCompleto}}</h5> 
+                                <p> {{cargo}} </p>
         
                             </div>
         
@@ -116,15 +123,16 @@
                     
                 <!-- FIM DA COLUNA 9-->
                 </div>
-    
-                                    
+                            
             </div>
+
+
 
         </div>
 
    
         <!-- COLUNA CONEXÕES-->
-        <div class="col-md-3 bg-success">
+        <div class="col-md-3">
            
             <div class="card conexoes mt-5" style="width: 310px; height: 520px;">
     

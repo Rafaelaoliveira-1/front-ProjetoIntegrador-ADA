@@ -97,7 +97,7 @@
 
 /* BOTAO DELETAR */
 
-.botaoDeletar {
+.botaoDeletar, .botaoEditarPerfil {
   background-color: #ffb81c;
   font-weight: 700;
   border-radius: 15px;
@@ -116,4 +116,28 @@
   max-height:150px;
   width: auto;
   height: auto;
+}
+
+.pb {
+  padding-left: 100px;
+}
+
+.fundo-cima {
+  background-color: #89458F; 
+  border-radius: 2rem 2rem 0rem 0rem;
+}
+
+.fundo-baixo {
+  background-color: #CD9CCC;
+}
+
+.fp {
+  color:white;
+  font-size: 18px;
+  font-family: "Roboto", sans-serif;
+}
+
+.fontNomeCargo {
+  color:white;
+  font-family: "Roboto", sans-serif;
 }
