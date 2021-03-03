@@ -21,7 +21,7 @@ import { EditPostagemComponent } from './edit/edit-postagem/edit-postagem.compon
     PrincipalComponent,
     HomeComponent,
     EditUsuarioComponent,
-    EditPostagemComponent
+    EditPostagemComponent,
   ],
   imports: [
     BrowserModule,
