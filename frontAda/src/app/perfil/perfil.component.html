@@ -34,131 +34,94 @@
 </nav>
 <!-- FIM NAVEGADOR -->
 
-<!-- MEU PERFIL -->
+<div class="container">
+
     <div class="row">
-        <!-- COLUNA MENU & POSTAGENS -->
-        <div class="col-md-9 bg-danger">
-     
-            <div class="card perfil-fundo ml-3 mt-5">
-            
-                <div class="card-header mt-4">
-                    
-                   
-                    
-                    
-                    
-                    
-                        <div class="row d-flex flex-row">
-        
-                            <img src="{{foto}}" alt=""  width="180px" height="0px" class="img-fluid rounded-circle bs ml-4 mt-3">
-        
-                            <div class="d-flex flex-column ml-4 my-auto">
-        
-                                <h5 class="mb-0">{{nomeCompleto}}</h5> 
-                                <p class="mt-0">{{cargo}}</p>
-        
-                            </div>
-        
-                            <div class="ml-auto mt-3 mr-5">
-        
-                                <button class="btn botaoPostar">Editar</button>
-        
-                            </div>
-        
-                        </div>
-        
-                        <hr class="mt-3">
-        
-                           
-                    
+
+        <div class="col-md-9">
 
 
 
-
-
-
-                </div>
-
+            <!-- Parte de cima do card com o tamanho para caber com a parte de baixo, e define as bordas de cima-->
+            <div class="card perfil-fundo sh mt-5">
+                <!-- Parque que centraliza a foto -->
                 <div class="card-body text-center">
-                    
-                    <h1>Minhas Postagens</h1>
-                                    
+                    <!-- Parte da imagem com a medida definida e arredondamento da imagem -->
+                    <img src="{{foto}}" alt="" width="150px" height="150px" class="img-fluid rounded-circle bs">
+                 
+                </div>
+    
             </div>
-<div class="card-back card mt-5 mb-5">
-
-                <div class="row d-flex flex-row">
-
-                    <img src="https://i.imgur.com/yNcdiBw.jpg" alt=""  width="90px" height="90px" class="img-fluid rounded-circle bs ml-4 mt-3">
-
-                    <div class="d-flex flex-column ml-4 my-auto">
-
-                        <h5 class="mb-0">Heloisa</h5> 
-                        <p class="align-self-center mt-0"> Desenvolvedora Full Stack Pleno </p>
-
+            <!-- Parte de baixo do card com tamanho para caber com a parte de cima-->
+            <div class="card perfil-texto bg-roxo sh card-baixo">
+                <!-- Parter que centraliza os textos do card -->
+                <div class="card-body text-center">
+                    <!-- Parte de baixo do card com tamanho para caber com a parte de cima, e define as bordas de baixo -->
+                    <div class="perfil-texto">
+                        
+                        <div class="titulo-card">
+    
+                            <!-- Parte que define o font-size de 20px-->
+                            <p class="nome"> {{nomeCompleto}} </p>
+                            <!-- Parte do cargo -->
+                            <p> {{cargo}} </p>
+                            <!-- Parte que define o font-size de 15px-->
+                        
+                        </div>
+    
+                        <p class="conexoes-postagens"> 25 Conexões </p>
+                        
+                        <p class="conexoes-postagens"> 12 Postagens </p>
+                        <!-- Parte que exibe data de entrada -->
+                        <p> Ingressou em Março de 2021 </p>
+                
                     </div>
-
-                    <div class="ml-auto mt-3 mr-5">
-
-                        <button class="btn botaoPostar">Editar</button>
-
-                    </div>
-
+                    <!-- Botão editar para modificar o perfil do usuário -->
+                    <a class="btn botaoEditar" routerLink='/perfil'>Editar</a>
+    
                 </div>
-
-                <hr class="mt-3">
-
-                    <div class="card-body mt-0 pt-0">
-
-                        <h5>Front-End</h5>
-
-                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Iure, ipsa. Mollitia recusandae in culpa, eveniet cum iste aliquid natus minus harum id earum pariatur reprehenderit modi eos! Nobis, dolorum eligendi! Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor, ea odit aliquam libero fuga numquam voluptatibus soluta minus earum, voluptas sequi placeat cumque quis vel culpa eligendi! Nobis, error dicta. Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate maiores minus possimus qui. Dolor in harum non placeat possimus enim. Officiis doloremque, nobis delectus consequuntur vitae aspernatur? Repellendus, voluptatibus eligendi.</p>
-
-                    </div>
-            
-
-
-                </div>
-            
+    
             </div>
 
-        <!-- FIM DA COLUNA 9-->
+
+
+
         </div>
 
-        <!-- COLUNA CONEXÕES-->
-        <div class="col-md-3 bg-success">
-           
+        <div class="col-md-3">
+
             <div class="card conexoes mt-5" style="width: 310px; height: 520px;">
     
                 <h3 class="text-center pt-3 font-weight-bold">Conexões</h3> 
                 
                 <hr>
-    
-                <div class="row text-center p-3">
+                
+                <div class="row text-center px-3">
     
                     <div class="col-md-6">
-                        <img src="https://i.imgur.com/20PfQdL.jpg" alt="" width="110px" height="110px" class="img-fluid rounded-circle bs">
-                        <h6 class="fs-c"> Juliana Serdan </h6>
-                        <img src="https://i.imgur.com/yNcdiBw.jpg" alt="" width="110px" height="110px" class="img-fluid rounded-circle bs">
-                        <h6 class="fs-c"> Heloisa Beatriz </h6>
-                        <img src="https://i.imgur.com/U4l29Sr.jpg" alt="" width="110px" height="110px" class="img-fluid rounded-circle bs">
-                        <h6 class="fs-c"> Jackeline Akemi </h6>
+                        <img src="https://i.imgur.com/20PfQdL.jpg" alt="" width="110px" height="110px" class="img-fluid rounded-circle ">
+                        <h6 class="fs-c mt-2"> Juliana Serdan </h6>
+                        <img src="https://i.imgur.com/yNcdiBw.jpg" alt="" width="110px" height="110px" class="img-fluid rounded-circle ">
+                        <h6 class="fs-c mt-2"> Heloisa Beatriz </h6>
+                        <img src="https://i.imgur.com/U4l29Sr.jpg" alt="" width="110px" height="110px" class="img-fluid rounded-circle ">
+                        <h6 class="fs-c mt-2"> Jackeline Akemi </h6>
                     </div>
     
                     <div class="col-md-6">
-                        <img src="https://i.imgur.com/55rP31I.jpg"  alt="" width="110px" height="110px" class="img-fluid rounded-circle bs">
-                        <h6 class="fs-c"> Beatriz Martins </h6>
-                        <img src="https://i.imgur.com/kxS2saL.jpg"  alt="" width="110px" height="110px" class="img-fluid rounded-circle bs">
-                        <h6 class="fs-c"> Bárbara Liboni </h6>
-                        <img src="https://i.imgur.com/KiZPmF1.jpg"  alt="" width="110px" height="110px" class="img-fluid rounded-circle bs">
-                        <h6 class="fs-c"> Venôrica Almenara</h6>
+                        <img src="https://i.imgur.com/55rP31I.jpg"  alt="" width="110px" height="110px" class="img-fluid rounded-circle ">
+                        <h6 class="fs-c mt-2"> Beatriz Martins </h6>
+                        <img src="https://i.imgur.com/kxS2saL.jpg"  alt="" width="110px" height="110px" class="img-fluid rounded-circle ">
+                        <h6 class="fs-c mt-2"> Bárbara Liboni </h6>
+                        <img src="https://i.imgur.com/KiZPmF1.jpg"  alt="" width="110px" height="110px" class="img-fluid rounded-circle ">
+                        <h6 class="fs-c mt-2"> Venôrica Almenara</h6>
                     </div>
     
                 </div>
-            </div>
+            </div>      
 
+        </div> <!-- FIM col-md-3-->
 
-        <!-- FIM COL 3 CONEXÕES -->
-        </div>
 
     </div>
-<!-- FIM DO CONTAINER-->
+
+</div>
