@@ -11,6 +11,8 @@ import { PrincipalComponent } from './principal/principal.component';
 import { HomeComponent } from './home/home.component';
 import { EditUsuarioComponent } from './edit/edit-usuario/edit-usuario.component';
 import { EditPostagemComponent } from './edit/edit-postagem/edit-postagem.component';
+import { PerfilComponent } from './perfil/perfil.component';
+
 
 
 @NgModule({
@@ -22,6 +24,7 @@ import { EditPostagemComponent } from './edit/edit-postagem/edit-postagem.compon
     HomeComponent,
     EditUsuarioComponent,
     EditPostagemComponent,
+    PerfilComponent
   ],
   imports: [
     BrowserModule,

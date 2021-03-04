@@ -5,6 +5,7 @@ import { EditPostagemComponent } from './edit/edit-postagem/edit-postagem.compon
 import { EditUsuarioComponent } from './edit/edit-usuario/edit-usuario.component';
 import { EntrarComponent } from './entrar/entrar.component';
 import { HomeComponent } from './home/home.component';
+import { PerfilComponent } from './perfil/perfil.component';
 import { PrincipalComponent } from './principal/principal.component';
 
 
@@ -16,7 +17,8 @@ const routes: Routes = [
   {path:'principal', component: PrincipalComponent},
   {path: 'home', component: HomeComponent},
   {path: 'edit-usuario/:id', component: EditUsuarioComponent},
-  {path: 'edit-postagem/:id', component: EditPostagemComponent}
+  {path: 'edit-postagem/:id', component: EditPostagemComponent},
+  {path: 'perfil', component: PerfilComponent}
 ];
 
 @NgModule({
