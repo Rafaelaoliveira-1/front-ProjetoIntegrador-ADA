@@ -14,7 +14,7 @@ export class EditPostagemComponent implements OnInit {
 
   constructor() { }
 
-  ngOnInit(): void {
+  ngOnInit() {
   }
 
   atualizar(){

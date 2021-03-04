@@ -4,6 +4,7 @@ import { environment } from 'src/environments/environment.prod';
 import { Postagem } from '../model/Postagem';
 import { Tema } from '../model/Tema';
 import { Usuario } from '../model/Usuario';
+import { AuthService } from '../service/auth.service';
 import { PostagemService } from '../service/postagem.service';
 import { TemaService } from '../service/tema.service';
 
@@ -37,7 +38,8 @@ export class PrincipalComponent implements OnInit {
   constructor(
     private router: Router,
     private TemaService: TemaService,
-    private PostagemService: PostagemService
+    private PostagemService: PostagemService,
+    private AuthService: AuthService
   ) {}
 
   ngOnInit() {

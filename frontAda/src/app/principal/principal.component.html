@@ -135,7 +135,7 @@
                 </div>
             </div>
              <!-- PUBLICAÇÕES ============================================================================== -->
-            <div *ngFor='reverse let item of listaPostagem'>
+            <div *ngFor='let item of listaPostagem'>
                 <div class="card-back card mt-5 mb-5">
                     
                     <div class="row d-flex flex-row">
@@ -157,7 +157,7 @@
                         </div>  
     
                     </div>
-    
+                    
                     <hr>
     
                         <div class="card-body mt-0 pt-0">
@@ -182,7 +182,7 @@
                 <!-- Parque que centraliza a foto -->
                 <div class="card-body text-center">
                     <!-- Parte da imagem com a medida definida e arredondamento da imagem -->
-                    <img src="{{foto}}" alt="Foto perfil - {{nomeCompleto}}"  class="img-fluid rounded-circle bs foto-perfil">
+                    <img src="{{foto}}" alt="Foto perfil - {{nomeCompleto}}"  class="img-fluid rounded-circle bs foto-perfil mt-3">
                  
                 </div>
     

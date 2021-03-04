@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { Postagem } from 'src/app/model/Postagem';
 import { Usuario } from 'src/app/model/Usuario';
 import { AuthService } from 'src/app/service/auth.service';
+import { PostagemService } from 'src/app/service/postagem.service';
 import { environment } from 'src/environments/environment.prod';
 
 @Component({
@@ -13,23 +15,30 @@ export class EditUsuarioComponent implements OnInit {
 
   foto = environment.foto
   usuario: Usuario = new Usuario
+  postagem: Postagem = new Postagem
   idUser: number
+
+  listaPostagem: Postagem[]
   
   constructor(
     private authService: AuthService,
     private route: ActivatedRoute,
-    private router: Router
+    private router: Router,
+    private postagemService: PostagemService
   ) { }
 
   ngOnInit(){
 
+    if (environment.token == '') {
+      alert('Sua sessão expirou!')
+      this.router.navigate(['/entrar'])
+    }
+
     this.idUser = this.route.snapshot.params['id']
     this.findUserById(this.idUser)
 
-    console.log(environment.nomeCompleto)
-    console.log(environment.cargo)
-    console.log(environment.foto)
-    console.log(environment.link)
+    this.findAllPostagem()
+
   }
 
   findUserById(id: number){
@@ -38,16 +47,30 @@ export class EditUsuarioComponent implements OnInit {
     })
   }
 
+  findAllPostagem(){
+    this.postagemService.getAllPostagem().subscribe((resp: Postagem[])=>{
+      this.listaPostagem = resp
+    })
+  }
+
   atualizar(){
-    this.authService.cadastrar(this.usuario).subscribe((resp: Usuario) => {
+    this.authService.putUser(this.usuario).subscribe((resp: Usuario) => {
       this.usuario = resp
-      this.router.navigate(['/perfil'])
-      alert('Usuário atualizado com sucesso, faça o login novamente.')
+
+      for(let i of this.listaPostagem){
+        console.log(i.usuario.id)
+        if(i.usuario.id == 0){
+          i.usuario.id = environment.id
+        }
+      }
+
+      alert('Usuário atualizado com sucesso!')
       environment.token = ''
-      environment.nomeCompleto = ''
-      environment.foto = ''
-      environment.id = 0
-      this.router.navigate(['/entrar'])
+      
+      if (environment.token == '') {
+        alert('Sua sessão expirou!')
+        this.router.navigate(['/entrar'])
+      }
     })
   }
 }
