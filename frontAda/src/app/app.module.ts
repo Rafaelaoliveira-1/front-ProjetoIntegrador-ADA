@@ -9,7 +9,10 @@ import { EntrarComponent } from './entrar/entrar.component';
 import { CadastrarComponent } from './cadastrar/cadastrar.component';
 import { PrincipalComponent } from './principal/principal.component';
 import { HomeComponent } from './home/home.component';
+import { EditUsuarioComponent } from './edit/edit-usuario/edit-usuario.component';
+import { EditPostagemComponent } from './edit/edit-postagem/edit-postagem.component';
 import { PerfilComponent } from './perfil/perfil.component';
+
 
 
 @NgModule({
@@ -19,6 +22,8 @@ import { PerfilComponent } from './perfil/perfil.component';
     CadastrarComponent,
     PrincipalComponent,
     HomeComponent,
+    EditUsuarioComponent,
+    EditPostagemComponent,
     PerfilComponent
   ],
   imports: [

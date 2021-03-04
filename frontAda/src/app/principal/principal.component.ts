@@ -31,6 +31,8 @@ export class PrincipalComponent implements OnInit {
   nomeCompleto = environment.nomeCompleto
   foto = environment.foto
   cargo = environment.cargo
+  id = environment.id
+  
 
   constructor(
     private router: Router,
