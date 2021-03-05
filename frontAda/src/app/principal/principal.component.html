@@ -152,13 +152,13 @@
     
                         <div class="ml-auto mt-3 mr-5" *ngIf= 'item.usuario.id == idUser'>
     
-                            <button class="btn botaoPostar">Editar</button>
+                            <button id='{{item.postagem_id}}' [routerLink]="['/edit-postagem',item.postagem_id]" class="btn botaoPostar">Editar</button>
     
                         </div>  
     
                     </div>
                     
-                    <hr>
+                    <hr class="mb-2">
     
                         <div class="card-body mt-0 pt-0">
                             

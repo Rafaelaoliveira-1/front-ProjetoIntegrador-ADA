@@ -51,20 +51,13 @@ export class PerfilComponent implements OnInit {
       this.router.navigate(['/entrar'])
     }
     this.findByIdUser()
-
-    console.log(this.listaPostagem)
-  }
-
-  findAllPostagem(){
-    this.PostagemService.getAllPostagem().subscribe((resp: Postagem[])=>{
-      this.listaPostagem = resp.reverse()
-    })
   }
 
   findByIdUser(){
     this.AuthService.getByIdUser(this.id).subscribe((resp: Usuario)=>{
       this.user = resp
       this.listaPostagem = this.user.postagem.reverse()
+      console.log(this.listaPostagem)
     })
   }
 }

@@ -26,6 +26,7 @@ export class PrincipalComponent implements OnInit {
   tipoPostagem: string
 
   idTema:number
+  idPostagem:number
   idUser = environment.id
   idcheck:number
 
@@ -67,6 +68,11 @@ export class PrincipalComponent implements OnInit {
   tipoTheme(event: any){
     this.tipoTema = event.target.value
   }
+  // implementação
+  // editarPostagem(event:any){
+  // this.idPostagem = event.target.id
+  //  console.log(this.idPostagem)
+  // }
 
   selecionar(event:any){
     this.idTema = event.target.id

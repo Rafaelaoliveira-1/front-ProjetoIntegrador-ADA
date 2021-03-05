@@ -17,8 +17,6 @@ export class EditUsuarioComponent implements OnInit {
   usuario: Usuario = new Usuario
   postagem: Postagem = new Postagem
   idUser: number
-
-  listaPostagem: Postagem[]
   
   constructor(
     private authService: AuthService,
@@ -36,9 +34,6 @@ export class EditUsuarioComponent implements OnInit {
 
     this.idUser = this.route.snapshot.params['id']
     this.findUserById(this.idUser)
-
-    this.findAllPostagem()
-
   }
 
   findUserById(id: number){
@@ -47,22 +42,13 @@ export class EditUsuarioComponent implements OnInit {
     })
   }
 
-  findAllPostagem(){
-    this.postagemService.getAllPostagem().subscribe((resp: Postagem[])=>{
-      this.listaPostagem = resp
-    })
+  atualizaFoto(event:any){
+    this.foto = event.target.value
   }
 
   atualizar(){
     this.authService.putUser(this.usuario).subscribe((resp: Usuario) => {
       this.usuario = resp
-
-      for(let i of this.listaPostagem){
-        console.log(i.usuario.id)
-        if(i.usuario.id == 0){
-          i.usuario.id = environment.id
-        }
-      }
 
       alert('Usuário atualizado com sucesso!')
       environment.token = ''
