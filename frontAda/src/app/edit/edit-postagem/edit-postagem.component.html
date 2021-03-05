@@ -149,7 +149,7 @@
 
   <footer class="footer">
     <div class="row d-flex justify-content-center">
-      <p class="text-center text-white pt-3">ADA 2021 ©</p>
+      <p class="text-white bg-roxo footer text-center p-4">ADA 2021 ©</p>
     </div>
   </footer>
 </div>
@@ -240,13 +240,10 @@
             Você tem certeza que deseja excluir a seguinte postagem?
           </h5>
 
-          <h6 class="text-left roboto font-weight-bold">Tema: Front-End</h6>
+          <h6 class="text-left roboto font-weight-bold">Tema: {{postagem.tema.descricaoTema}}</h6>
           <div class="card-back-del">
             <p class="roboto">
-              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Iste
-              beatae officiis saepe omnis soluta repudiandae ex amet ratione
-              delectus, iure veniam eius velit voluptatum labore quo! Similique
-              quaerat minima magnam.
+             {{postagem.descricaoPostagem}}
             </p>
           </div>
         </div>
@@ -261,6 +258,7 @@
           Fechar
         </button>
         <button
+          (click)='deletar(idPostagem)'
           type="button"
           id="excluirPostagem"
           class="btn"

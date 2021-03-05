@@ -63,4 +63,12 @@ export class EditPostagemComponent implements OnInit {
       this.router.navigate(['/perfil'])
     })
   }
+
+  deletar(id:number){
+    this.PostagemService.deletePostagem(id).subscribe(()=>{
+      alert ('Postagem deletada com sucesso')
+      this.router.navigate(['/perfil'])
+    })    
+  }
+
 }
