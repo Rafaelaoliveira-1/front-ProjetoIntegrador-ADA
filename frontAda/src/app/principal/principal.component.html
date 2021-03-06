@@ -13,7 +13,7 @@
                 <input [(ngModel)]='busca'  [ngModelOptions]="{standalone: true}" class="form-control mr-sm-2" id="txtBusca" style="width: 300pt; height: 35px;" type="text"
                     placeholder="  pesquisar..." aria-label="Search">
                 <a class="lupa-busca">
-                    <img (click)='findByDescricaoTema();findByTipoTema()' src="../../assets/img/img-search.png" id="btnBusca" style="height: 20px;" alt="">
+                    <img (click)='findByDescricaoPostagem()' src="../../assets/img/img-search.png" id="btnBusca" style="height: 20px;" alt="">
                 </a>
             </form>
         </div>
@@ -136,8 +136,8 @@
             </div>
              <!-- PUBLICAÇÕES ============================================================================== -->
             
-                <div *ngFor = 'let tema of listaTema '>
-                    <div *ngFor='let item of tema.postagem'>
+                <!-- <div *ngFor = 'let tema of listaTema '> -->
+                    <div *ngFor='let item of listaPostagem'>
                         <div class="card-back card mt-5 mb-5">
                             
                             <div class="row d-flex flex-row">
@@ -164,14 +164,14 @@
             
                                 <div class="card-body mt-0 pt-0">
                                     
-                                    <h5>{{tema.descricaoTema}}</h5>
+                                    <h5>{{item.tema.descricaoTema}}</h5>
             
                                     <p>{{item.descricaoPostagem}}</p>
                 
                                 </div>
                         </div>
                     </div>
-                </div>
+                <!-- </div> -->
              
         <!-- Fim da div da col-md-6  -->  
         </div>
