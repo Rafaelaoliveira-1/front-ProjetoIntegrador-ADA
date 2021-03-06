@@ -21,6 +21,7 @@
 #btnBusca {
   display: flex;
   align-items: flex-end;
+  cursor: pointer;
 }
 
 li {
@@ -52,7 +53,7 @@ textarea {
   border-radius: 15px;
   color: black;
 }
-.sticky{
+.sticky {
   position: sticky;
   top: 80px;
 }
@@ -174,8 +175,6 @@ textarea {
 .modalTema {
   border-radius: 15px;
 }
-
-
 
 .footer {
   background-color: #89458f;

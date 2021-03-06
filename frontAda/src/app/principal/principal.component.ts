@@ -21,6 +21,7 @@ export class PrincipalComponent implements OnInit {
   
   listaPostagem:Postagem[]
   listaTema:Tema[]
+  listaTemaModal:Tema[]
 
   busca: string
 
@@ -36,7 +37,9 @@ export class PrincipalComponent implements OnInit {
   foto = environment.foto
   cargo = environment.cargo
   id = environment.id
-  
+
+  key = 'dataHora'
+  reverse = true
 
   constructor(
     private router: Router,
@@ -51,18 +54,18 @@ export class PrincipalComponent implements OnInit {
       this.router.navigate(['/entrar'])
     }
     this.findAllTema()
-    this.findAllPostagem()
   }
 
   findAllPostagem(){
     this.PostagemService.getAllPostagem().subscribe((resp: Postagem[])=>{
-      this.listaPostagem = resp.reverse()
+      this.listaPostagem = resp
     })
   }
 
   findAllTema(){
     this.TemaService.getAllTema().subscribe((resp:Tema[]) =>{
       this.listaTema = resp
+      this.listaTemaModal = resp.reverse()
     })
   }
 
@@ -103,36 +106,30 @@ export class PrincipalComponent implements OnInit {
       this.postagem = resp
       alert('Postagem realizada com sucesso!')
       this.postagem = new Postagem()
-      this.findAllPostagem()
+      this.findAllTema()
     })
   }
 
-  findByDescricaoPostagem() {
+  findByDescricaoTema() {
     if (this.busca == '') {
-      this.findAllPostagem()
+      this.findAllTema()
     } else {
-      this.PostagemService.getByDescricaoPostagem(this.busca).subscribe((resp: Postagem[]) => {
-        this.listaPostagem = resp
+      this.TemaService.getByDescricaoTema(this.busca).subscribe((resp: Tema[]) => {
+        this.listaTema = resp
       })
     }
-    
   }
 
 
-
-
-  
-  findByDescricaoTema() {
-    this.TemaService.getByDescricaoTema(this.busca).subscribe((resp: Tema[]) => {
-      this.listaTema = resp
-    })
-  }
-
-  /*
   findByTipoTema() {
-    this.TemaService.getByTipoTema(this.busca).subscribe((resp: Tema[]) => {
-      this.listaTema = resp
-    })
-  } */
+    if (this.busca == '') {
+      this.findAllTema()
+    } else {
+      this.TemaService.getByTipoTema(this.busca).subscribe((resp: Tema[]) => {
+      this.listaTema=this.listaTema.concat(resp)
+      this.listaTema = this.listaTema.reverse()
+      })
+      }
+    }
 
 }

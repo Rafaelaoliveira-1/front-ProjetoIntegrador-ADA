@@ -12,6 +12,7 @@ import { HomeComponent } from './home/home.component';
 import { EditUsuarioComponent } from './edit/edit-usuario/edit-usuario.component';
 import { EditPostagemComponent } from './edit/edit-postagem/edit-postagem.component';
 import { PerfilComponent } from './perfil/perfil.component';
+import { OrderModule } from 'ngx-order-pipe';
 
 
 
@@ -30,7 +31,8 @@ import { PerfilComponent } from './perfil/perfil.component';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    OrderModule
   ],
   providers: [],
   bootstrap: [AppComponent]
