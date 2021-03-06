@@ -10,9 +10,9 @@
     <div class="collapse navbar-collapse d-flex justify-content-center" id="navbarSupportedContent">
         <div id="divBusca" style="width: 440px;">
             <form class="form-inline my-2 my-lg-0">
-                <input class="form-control mr-sm-2" id="txtBusca" style="width: 300pt; height: 35px;" type="text"
+                <input [(ngModel)]='busca' (keyup)='findByDescricaoPostagem()' [ngModelOptions]="{standalone: true}" class="form-control mr-sm-2" id="txtBusca" style="width: 300pt; height: 35px;" type="text"
                     placeholder="  pesquisar..." aria-label="Search">
-                <a href="">
+                <a>
                     <img src="../../assets/img/img-search.png" id="btnBusca" style="height: 20px;" alt="">
                 </a>
             </form>
@@ -135,40 +135,45 @@
                 </div>
             </div>
              <!-- PUBLICAÇÕES ============================================================================== -->
-            <div *ngFor='let item of listaPostagem'>
-                <div class="card-back card mt-5 mb-5">
-                    
-                    <div class="row d-flex flex-row">
-    
-                        <img src="{{item.usuario.foto}}" alt="Foto do usuário da postagem"   class="img-fluid rounded-circle bs ml-4 mt-3 foto-publi">
-    
-                        <div class="d-flex flex-column ml-4 mt-4">
-    
-                            <h5 class="mb-0">{{item.usuario.nomeCompleto}}</h5> 
-                            <p class="mt-0 mb-0">{{item.usuario.cargo}}</p>
-                            <p class="mt-0"><small>{{item.dataHora | date: 'dd/MM/yyyy'}} às {{item.dataHora | date: 'HH:mm'}}</small></p>
-    
-                        </div>
-    
-                        <div class="ml-auto mt-3 mr-5" *ngIf= 'item.usuario.id == idUser'>
-    
-                            <button id='{{item.postagem_id}}' [routerLink]="['/edit-postagem',item.postagem_id]" class="btn botaoPostar">Editar</button>
-    
-                        </div>  
-    
-                    </div>
-                    
-                    <hr class="mb-2">
-    
-                        <div class="card-body mt-0 pt-0">
-                            
-                            <h5>{{item.tema.descricaoTema}}</h5>
-    
-                            <p>{{item.descricaoPostagem}}</p>
+            
+            
+                <div *ngFor='let item of listaPostagem'>
+                    <div class="card-back card mt-5 mb-5">
+                        
+                        <div class="row d-flex flex-row">
+        
+                            <img src="{{item.usuario.foto}}" alt="Foto do usuário da postagem"   class="img-fluid rounded-circle bs ml-4 mt-3 foto-publi">
+        
+                            <div class="d-flex flex-column ml-4 mt-4">
+        
+                                <h5 class="mb-0">{{item.usuario.nomeCompleto}}</h5> 
+                                <p class="mt-0 mb-0">{{item.usuario.cargo}}</p>
+                                <p class="mt-0"><small>{{item.dataHora | date: 'dd/MM/yyyy'}} às {{item.dataHora | date: 'HH:mm'}}</small></p>
+        
+                            </div>
+        
+                            <div class="ml-auto mt-3 mr-5" *ngIf= 'item.usuario.id == idUser'>
+        
+                                <button id='{{item.postagem_id}}' [routerLink]="['/edit-postagem',item.postagem_id]" class="btn botaoPostar">Editar</button>
+        
+                            </div>  
         
                         </div>
+                        
+                        <hr class="mb-2">
+        
+                            <div class="card-body mt-0 pt-0">
+                                
+                                <h5>{{item.tema.descricaoTema}}</h5>
+        
+                                <p>{{item.descricaoPostagem}}</p>
+            
+                            </div>
+                    </div>
                 </div>
-            </div>
+            
+            
+             
              
         <!-- Fim da div da col-md-6  -->  
         </div>

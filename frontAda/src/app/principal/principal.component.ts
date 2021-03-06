@@ -4,7 +4,6 @@ import { environment } from 'src/environments/environment.prod';
 import { Postagem } from '../model/Postagem';
 import { Tema } from '../model/Tema';
 import { Usuario } from '../model/Usuario';
-import { AuthService } from '../service/auth.service';
 import { PostagemService } from '../service/postagem.service';
 import { TemaService } from '../service/tema.service';
 
@@ -19,8 +18,11 @@ export class PrincipalComponent implements OnInit {
   postagem:Postagem = new Postagem()
   tema:Tema = new Tema()
 
+  
   listaPostagem:Postagem[]
   listaTema:Tema[]
+
+  busca: string
 
   tipoTema: string
   tipoPostagem: string
@@ -40,7 +42,6 @@ export class PrincipalComponent implements OnInit {
     private router: Router,
     private TemaService: TemaService,
     private PostagemService: PostagemService,
-    private AuthService: AuthService
   ) {}
 
   ngOnInit() {
@@ -105,4 +106,33 @@ export class PrincipalComponent implements OnInit {
       this.findAllPostagem()
     })
   }
+
+  findByDescricaoPostagem() {
+    if (this.busca == '') {
+      this.findAllPostagem()
+    } else {
+      this.PostagemService.getByDescricaoPostagem(this.busca).subscribe((resp: Postagem[]) => {
+        this.listaPostagem = resp
+      })
+    }
+    
+  }
+
+
+
+
+  
+  findByDescricaoTema() {
+    this.TemaService.getByDescricaoTema(this.busca).subscribe((resp: Tema[]) => {
+      this.listaTema = resp
+    })
+  }
+
+  /*
+  findByTipoTema() {
+    this.TemaService.getByTipoTema(this.busca).subscribe((resp: Tema[]) => {
+      this.listaTema = resp
+    })
+  } */
+
 }
