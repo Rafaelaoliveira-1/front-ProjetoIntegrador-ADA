@@ -53,12 +53,13 @@ export class PrincipalComponent implements OnInit {
       alert('Sua sessão expirou!')
       this.router.navigate(['/entrar'])
     }
+    this.findAllPostagem()
     this.findAllTema()
   }
 
   findAllPostagem(){
     this.PostagemService.getAllPostagem().subscribe((resp: Postagem[])=>{
-      this.listaPostagem = resp
+      this.listaPostagem = resp.reverse()
     })
   }
 
@@ -110,26 +111,35 @@ export class PrincipalComponent implements OnInit {
     })
   }
 
-  findByDescricaoTema() {
+  findByDescricaoPostagem() {
     if (this.busca == '') {
-      this.findAllTema()
+      this.findAllPostagem()
     } else {
-      this.TemaService.getByDescricaoTema(this.busca).subscribe((resp: Tema[]) => {
-        this.listaTema = resp
+      this.PostagemService.getByDescricaoPostagem(this.busca).subscribe((resp: Postagem[]) => {
+        this.listaPostagem = resp
       })
     }
   }
 
+  // findByDescricaoTema() {
+  //   if (this.busca == '') {
+  //     this.findAllTema()
+  //   } else {
+  //     this.TemaService.getByDescricaoTema(this.busca).subscribe((resp: Tema[]) => {
+  //       this.listaTema = resp
+  //     })
+  //   }
+  // }
 
-  findByTipoTema() {
-    if (this.busca == '') {
-      this.findAllTema()
-    } else {
-      this.TemaService.getByTipoTema(this.busca).subscribe((resp: Tema[]) => {
-      this.listaTema=this.listaTema.concat(resp)
-      this.listaTema = this.listaTema.reverse()
-      })
-      }
-    }
+  // findByTipoTema() {
+  //   if (this.busca == '') {
+  //     this.findAllTema()
+  //   } else {
+  //     this.TemaService.getByTipoTema(this.busca).subscribe((resp: Tema[]) => {
+  //     this.listaTema=this.listaTema.concat(resp)
+  //     this.listaTema = this.listaTema.reverse()
+  //     })
+  //     }
+  //   }
 
 }
