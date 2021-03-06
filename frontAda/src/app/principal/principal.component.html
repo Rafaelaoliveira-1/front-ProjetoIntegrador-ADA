@@ -91,21 +91,6 @@
                         <p class="text-center mont">Veja Mais...</p>
                     </a>
                 </div>
-    
-                <a class="text-dark" href="">
-                    <p class="insti" style="margin-bottom: 0%; margin-top: 20px;">Política de privacidade da rede social ADA
-                    </p>
-                </a>
-                <a class="text-dark" href="">
-                    <p class="insti" style="margin: 0%;">Sobre</p>
-                </a>
-                <a class="text-dark" href="">
-                    <p class="insti" style="margin: 0%;">Política de direitos autorais </p>
-                </a>
-                <a class="text-dark" href="">
-                    <p class="insti" style="margin: 0%;">Direitos de marca </p>
-                </a>
-                <p class="insti text-center" style="margin: 0%; font-size: 20px; font-weight: 600;">ADA 2021 © </p>
 
             </section>
         </div>
@@ -127,7 +112,7 @@
                         placeholder="No que você está pensando?" [(ngModel)]='postagem.descricaoPostagem'></textarea>
 
 
-                    <div class="row d-flex justify-content-end mt-2">
+                    <div class="row d-flex justify-content-end mt-1">
                         <button class="btn botaoTema mr-4" data-toggle="modal" data-target="#Temas">Escolher
                             Tema</button>
                         <button class="btn botaoPostar mr-4" (click)='postar()'>Postar</button>
@@ -257,12 +242,20 @@
     </div>
 </div>
 
-<footer class="footer mt-5">
-    <div class="row d-flex justify-content-center ">
-        <p class="text-center text-white pt-3">ADA 2021 ©</p>
+<!-- RODAPÉ ======================================================================================================== -->
+<div class="row text-center mt-5">
+    <div class="col-md-12">
+      <a href="#" class="mr-5 font-foot">Política de privacidade do rede social ADA</a>
+      <a href="#" class="mr-5 font-foot">Sobre</a>
+      <a href="#" class="mr-5 font-foot">Política de direitos autorais</a>
+      <a href="#" class="font-foot">Direitos de marca</a>
     </div>
-   
-</footer>
+</div>
+<div class="row">
+    <div class="col-md-12">
+      <p class=" text-white bg-roxo footer text-center m-0 pt-3">ADA 2021 &copy;</p>
+    </div>
+</div>
 
 
 

@@ -42,7 +42,8 @@ input {
   margin-top: 0px;
 }
 .card-body {
-  padding-top: 0px;
+  padding-top: 5px;
+
 }
 #hr-perfil {
   margin: 0px !important;
@@ -191,10 +192,6 @@ textarea {
   box-shadow: #acacac 4px 4px 8px;
 }
 
-.insti {
-  font-family: "Old Standard TT", serif;
-}
-
 .card-title {
   font-family: "Montserrat", sans-serif;
   font-weight: 600;
@@ -203,3 +200,24 @@ textarea {
 .card-text {
   font-family: "Roboto", sans-serif;
 }
+
+
+.footer {
+  font-size: 18px;
+}
+
+.font-foot{
+  font-family: "Montserrat", sans-serif;
+  color: #89458f;
+  font-weight: bold;
+}
+
+.font-foot :hover{
+  text-decoration: none;
+  color: #3a0d3d;
+}
+
+.opac{
+  opacity: 1;
+}
+
