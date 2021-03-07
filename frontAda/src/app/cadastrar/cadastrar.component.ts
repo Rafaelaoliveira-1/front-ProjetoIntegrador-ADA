@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Usuario } from '../model/Usuario';
+import { AlertasService } from '../service/alertas.service';
 import { AuthService } from '../service/auth.service';
 
 @Component({
@@ -17,10 +18,13 @@ export class CadastrarComponent implements OnInit {
 
   constructor(
     private router: Router,
-    private auth: AuthService
+    private auth: AuthService,
+    private alertas: AlertasService
   ) { }
 
-  ngOnInit(){
+  ngOnInit()
+  
+  {
     window.scroll(0,0)
   }
 
@@ -37,23 +41,20 @@ export class CadastrarComponent implements OnInit {
   }
 
   cadastrar(){
-   this.usuario.tipo = this.tipoUsuario
-    
-   console.log(this.validaSenha)
-   console.log(this.usuario.senha)
+    this.usuario.tipo = this.tipoUsuario
 
-   if(this.usuario.senha != this.validaSenha){
-     alert('As senhas cadastradas não são iguais.')
-   }
-   else if(this.validaNome.length < 1){
-    alert('Preencha corretamente o campo nome!')
-   }
-   else{
+    if(this.usuario.senha != this.validaSenha){
+      this.alertas.showAlertDanger('As senhas cadastradas não são iguais!')
+    }
+    else if(this.validaNome.length < 4){
+      this.alertas.showAlertDanger('Insira no mínimo 5 caracteres!')
+    }
+    else{
      this.auth.cadastrar(this.usuario).subscribe((resp: Usuario) =>{
        this.usuario = resp
 
        this.router.navigate(['/entrar'])
-       alert('Cadastro realizado com sucesso!')
+       this.alertas.showAlertSuccess('Cadastro realizado com sucesso!')
      })
    }
   }
