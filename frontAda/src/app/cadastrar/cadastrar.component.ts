@@ -20,7 +20,9 @@ export class CadastrarComponent implements OnInit {
     private auth: AuthService
   ) { }
 
-  ngOnInit(){
+  ngOnInit()
+  
+  {
     window.scroll(0,0)
   }
 
