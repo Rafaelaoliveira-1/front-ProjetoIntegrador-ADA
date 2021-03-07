@@ -10,10 +10,10 @@
     <div class="collapse navbar-collapse d-flex justify-content-center" id="navbarSupportedContent">
         <div id="divBusca" style="width: 440px;">
             <form class="form-inline my-2 my-lg-0">
-                <input class="form-control mr-sm-2" id="txtBusca" style="width: 300pt; height: 35px;" type="text"
+                <input [(ngModel)]='busca'  [ngModelOptions]="{standalone: true}" class="form-control mr-sm-2" id="txtBusca" style="width: 300pt; height: 35px;" type="text"
                     placeholder="  pesquisar..." aria-label="Search">
-                <a href="">
-                    <img src="../../assets/img/img-search.png" id="btnBusca" style="height: 20px;" alt="">
+                <a class="lupa-busca">
+                    <img (click)='findByDescricaoPostagem()' src="../../assets/img/img-search.png" id="btnBusca" style="height: 20px;" alt="">
                 </a>
             </form>
         </div>
@@ -32,7 +32,7 @@
     </li>
 </nav>
 
-<div class="container-fluid mt-5">
+<div class="container-fluid mt-5 ">
     <div class="row">
         <div class="col-md-3 ">
             <section class="sticky">
@@ -91,21 +91,6 @@
                         <p class="text-center mont">Veja Mais...</p>
                     </a>
                 </div>
-    
-                <a class="text-dark" href="">
-                    <p class="insti" style="margin-bottom: 0%; margin-top: 20px;">Política de privacidade da rede social ADA
-                    </p>
-                </a>
-                <a class="text-dark" href="">
-                    <p class="insti" style="margin: 0%;">Sobre</p>
-                </a>
-                <a class="text-dark" href="">
-                    <p class="insti" style="margin: 0%;">Política de direitos autorais </p>
-                </a>
-                <a class="text-dark" href="">
-                    <p class="insti" style="margin: 0%;">Direitos de marca </p>
-                </a>
-                <p class="insti text-center" style="margin: 0%; font-size: 20px; font-weight: 600;">ADA 2021 © </p>
 
             </section>
         </div>
@@ -127,7 +112,7 @@
                         placeholder="No que você está pensando?" [(ngModel)]='postagem.descricaoPostagem'></textarea>
 
 
-                    <div class="row d-flex justify-content-end mt-2">
+                    <div class="row d-flex justify-content-end mt-1">
                         <button class="btn botaoTema mr-4" data-toggle="modal" data-target="#Temas">Escolher
                             Tema</button>
                         <button class="btn botaoPostar mr-4" (click)='postar()'>Postar</button>
@@ -135,40 +120,43 @@
                 </div>
             </div>
              <!-- PUBLICAÇÕES ============================================================================== -->
-            <div *ngFor='let item of listaPostagem'>
-                <div class="card-back card mt-5 mb-5">
-                    
-                    <div class="row d-flex flex-row">
-    
-                        <img src="{{item.usuario.foto}}" alt="Foto do usuário da postagem"   class="img-fluid rounded-circle bs ml-4 mt-3 foto-publi">
-    
-                        <div class="d-flex flex-column ml-4 mt-4">
-    
-                            <h5 class="mb-0">{{item.usuario.nomeCompleto}}</h5> 
-                            <p class="mt-0 mb-0">{{item.usuario.cargo}}</p>
-                            <p class="mt-0"><small>{{item.dataHora | date: 'dd/MM/yyyy'}} às {{item.dataHora | date: 'HH:mm'}}</small></p>
-    
-                        </div>
-    
-                        <div class="ml-auto mt-3 mr-5" *ngIf= 'item.usuario.id == idUser'>
-    
-                            <button id='{{item.postagem_id}}' [routerLink]="['/edit-postagem',item.postagem_id]" class="btn botaoPostar">Editar</button>
-    
-                        </div>  
-    
-                    </div>
-                    
-                    <hr class="mb-2">
-    
-                        <div class="card-body mt-0 pt-0">
+            
+                <!-- <div *ngFor = 'let tema of listaTema '> -->
+                    <div *ngFor='let item of listaPostagem'>
+                        <div class="card-back card mt-5 mb-5">
                             
-                            <h5>{{item.tema.descricaoTema}}</h5>
-    
-                            <p>{{item.descricaoPostagem}}</p>
-        
+                            <div class="row d-flex flex-row">
+            
+                                <img src="{{item.usuario.foto}}" alt="Foto do usuário da postagem"   class="img-fluid rounded-circle bs ml-4 mt-3 foto-publi">
+            
+                                <div class="d-flex flex-column ml-4 mt-4">
+            
+                                    <h5 class="mb-0">{{item.usuario.nomeCompleto}}</h5> 
+                                    <p class="mt-0 mb-0">{{item.usuario.cargo}}</p>
+                                    <p class="mt-0"><small>{{item.dataHora | date: 'dd/MM/yyyy'}} às {{item.dataHora | date: 'HH:mm'}}</small></p>
+            
+                                </div>
+            
+                                <div class="ml-auto mt-3 mr-5" *ngIf= 'item.usuario.id == idUser'>
+            
+                                    <button id='{{item.postagem_id}}' [routerLink]="['/edit-postagem',item.postagem_id]" class="btn botaoPostar">Editar</button>
+            
+                                </div>  
+            
+                            </div>
+                            
+                            <hr class="mb-2">
+            
+                                <div class="card-body mt-0 pt-0">
+                                    
+                                    <h5>{{item.tema.descricaoTema}}</h5>
+            
+                                    <p>{{item.descricaoPostagem}}</p>
+                
+                                </div>
                         </div>
-                </div>
-            </div>
+                    </div>
+                <!-- </div> -->
              
         <!-- Fim da div da col-md-6  -->  
         </div>
@@ -197,7 +185,7 @@
                         <div class="titulo-card">
     
                             <!-- Parte que define o font-size de 20px-->
-                            <p class="nome"> {{nomeCompleto}} </p>
+                            <p class="nome mt-2"> {{nomeCompleto}} </p>
                             <!-- Parte do cargo -->
                             <p> {{cargo}} </p>
                             <!-- Parte que define o font-size de 15px-->
@@ -229,20 +217,20 @@
     
                     <div class="col-md-6">
                         <img src="https://i.imgur.com/20PfQdL.jpg" alt="" class="img-fluid rounded-circle bs foto-conexao">
-                        <h6 class="fs-c mt-1"> Juliana Serdan </h6>
+                        <h6 class="fs-c mt-2"> Juliana Serdan </h6>
                         <img src="https://i.imgur.com/yNcdiBw.jpg" alt="" class="img-fluid rounded-circle bs foto-conexao">
-                        <h6 class="fs-c mt-1"> Heloisa Beatriz </h6>
+                        <h6 class="fs-c mt-2"> Heloisa Beatriz </h6>
                         <img src="https://i.imgur.com/U4l29Sr.jpg" alt="" class="img-fluid rounded-circle bs foto-conexao">
-                        <h6 class="fs-c mt-1"> Jackeline Akemi </h6>
+                        <h6 class="fs-c mt-2"> Jackeline Akemi </h6>
                     </div>
     
                     <div class="col-md-6">
                         <img src="https://i.imgur.com/55rP31I.jpg"  alt="" class="img-fluid rounded-circle bs foto-conexao">
-                        <h6 class="fs-c mt-1"> Beatriz Martins </h6>
+                        <h6 class="fs-c mt-2"> Beatriz Martins </h6>
                         <img src="https://i.imgur.com/kxS2saL.jpg"  alt="" class="img-fluid rounded-circle bs foto-conexao">
-                        <h6 class="fs-c mt-1"> Bárbara Liboni </h6>
+                        <h6 class="fs-c mt-2"> Bárbara Liboni </h6>
                         <img src="https://i.imgur.com/KiZPmF1.jpg"  alt="" class="img-fluid rounded-circle bs foto-conexao">
-                        <h6 class="fs-c mt-1"> Venôrica Almenara</h6>
+                        <h6 class="fs-c mt-2"> Venôrica Almenara</h6>
                     </div>
     
                 </div>
@@ -254,12 +242,20 @@
     </div>
 </div>
 
-<footer class="footer mt-5">
-    <div class="row d-flex justify-content-center ">
-        <p class="text-center text-white pt-3">ADA 2021 ©</p>
+<!-- RODAPÉ ======================================================================================================== -->
+<div class="row text-center mt-5">
+    <div class="col-md-12">
+      <a href="#" class="mr-5 font-foot">Política de privacidade do rede social ADA</a>
+      <a href="#" class="mr-5 font-foot">Sobre</a>
+      <a href="#" class="mr-5 font-foot">Política de direitos autorais</a>
+      <a href="#" class="font-foot">Direitos de marca</a>
     </div>
-   
-</footer>
+</div>
+<div class="row">
+    <div class="col-md-12">
+      <p class=" text-white bg-roxo footer text-center m-0 pt-3">ADA 2021 &copy;</p>
+    </div>
+</div>
 
 
 
@@ -308,7 +304,7 @@
                       </tr>
                     </thead>
                     <tbody>
-                      <tr *ngFor='let item of listaTema'>
+                      <tr *ngFor='let item of listaTemaModal'>
                         <th scope="row" >{{item.id}}</th>
                         <td class="roboto">{{item.descricaoTema}}</td>
                         <td class="d-flex justify-content-end">

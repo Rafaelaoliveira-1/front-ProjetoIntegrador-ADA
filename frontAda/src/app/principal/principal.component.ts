@@ -4,7 +4,7 @@ import { environment } from 'src/environments/environment.prod';
 import { Postagem } from '../model/Postagem';
 import { Tema } from '../model/Tema';
 import { Usuario } from '../model/Usuario';
-import { AuthService } from '../service/auth.service';
+import { AlertasService } from '../service/alertas.service';
 import { PostagemService } from '../service/postagem.service';
 import { TemaService } from '../service/tema.service';
 
@@ -19,8 +19,12 @@ export class PrincipalComponent implements OnInit {
   postagem:Postagem = new Postagem()
   tema:Tema = new Tema()
 
+  
   listaPostagem:Postagem[]
   listaTema:Tema[]
+  listaTemaModal:Tema[]
+
+  busca: string
 
   tipoTema: string
   tipoPostagem: string
@@ -34,23 +38,25 @@ export class PrincipalComponent implements OnInit {
   foto = environment.foto
   cargo = environment.cargo
   id = environment.id
-  
+
+  key = 'dataHora'
+  reverse = true
 
   constructor(
     private router: Router,
     private TemaService: TemaService,
     private PostagemService: PostagemService,
-    private AuthService: AuthService
+    private alertas: AlertasService
   ) {}
 
   ngOnInit() {
 
     if (environment.token == '') {
-      alert('Sua sessão expirou!')
+      this.alertas.showAlertInfo('Sua sessão expirou!')
       this.router.navigate(['/entrar'])
     }
-    this.findAllTema()
     this.findAllPostagem()
+    this.findAllTema()
   }
 
   findAllPostagem(){
@@ -62,6 +68,7 @@ export class PrincipalComponent implements OnInit {
   findAllTema(){
     this.TemaService.getAllTema().subscribe((resp:Tema[]) =>{
       this.listaTema = resp
+      this.listaTemaModal = resp.reverse()
     })
   }
 
@@ -86,7 +93,7 @@ export class PrincipalComponent implements OnInit {
   
     this.TemaService.postTema(this.tema).subscribe((resp:Tema) =>{
       this.tema = resp
-      alert('Cadastrado com sucesso!')
+      
       this.findAllTema()
       this.tema = new Tema()
     })
@@ -100,9 +107,41 @@ export class PrincipalComponent implements OnInit {
 
     this.PostagemService.postPostagem(this.postagem).subscribe((resp:Postagem) =>{
       this.postagem = resp
-      alert('Postagem realizada com sucesso!')
+      this.alertas.showAlertSuccess('Postagem realizada com sucesso!')
       this.postagem = new Postagem()
-      this.findAllPostagem()
+      this.findAllTema()
     })
   }
+
+  findByDescricaoPostagem() {
+    if (this.busca == '') {
+      this.findAllPostagem()
+    } else {
+      this.PostagemService.getByDescricaoPostagem(this.busca).subscribe((resp: Postagem[]) => {
+        this.listaPostagem = resp
+      })
+    }
+  }
+
+  // findByDescricaoTema() {
+  //   if (this.busca == '') {
+  //     this.findAllTema()
+  //   } else {
+  //     this.TemaService.getByDescricaoTema(this.busca).subscribe((resp: Tema[]) => {
+  //       this.listaTema = resp
+  //     })
+  //   }
+  // }
+
+  // findByTipoTema() {
+  //   if (this.busca == '') {
+  //     this.findAllTema()
+  //   } else {
+  //     this.TemaService.getByTipoTema(this.busca).subscribe((resp: Tema[]) => {
+  //     this.listaTema=this.listaTema.concat(resp)
+  //     this.listaTema = this.listaTema.reverse()
+  //     })
+  //     }
+  //   }
+
 }

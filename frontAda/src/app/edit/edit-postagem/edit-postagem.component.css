@@ -131,3 +131,14 @@ textarea {
   font-family: "Montserrat", sans-serif;
   letter-spacing: 1px;
 }
+
+.footer {
+  font-size: 18px;
+}
+
+.font-foot{
+  font-family: "Montserrat", sans-serif;
+  color: #89458f;
+  font-weight: bold;
+}
+
