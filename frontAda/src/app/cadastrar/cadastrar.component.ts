@@ -44,8 +44,8 @@ export class CadastrarComponent implements OnInit {
     if(this.usuario.senha != this.validaSenha){
       this.alertas.showAlertDanger('As senhas cadastradas não são iguais!')
     }
-    else if(this.validaNome.length < 1){
-      this.alertas.showAlertDanger('Preencha corretamente o campo nome!')
+    else if(this.validaNome.length < 4){
+      this.alertas.showAlertDanger('Insira no mínimo 5 caracteres!')
     }
     else{
      this.auth.cadastrar(this.usuario).subscribe((resp: Usuario) =>{
