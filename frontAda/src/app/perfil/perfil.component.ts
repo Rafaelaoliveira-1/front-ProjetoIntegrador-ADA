@@ -4,6 +4,7 @@ import { environment } from 'src/environments/environment.prod';
 import { Postagem } from '../model/Postagem';
 import { Tema } from '../model/Tema';
 import { Usuario } from '../model/Usuario';
+import { AlertasService } from '../service/alertas.service';
 import { AuthService } from '../service/auth.service';
 import { PostagemService } from '../service/postagem.service';
 import { TemaService } from '../service/tema.service';
@@ -40,14 +41,15 @@ export class PerfilComponent implements OnInit {
     private router: Router,
     private TemaService: TemaService,
     private PostagemService: PostagemService,
-    private AuthService: AuthService
+    private AuthService: AuthService, 
+    private alertas: AlertasService
 
   ) { }
 
   ngOnInit() {
 
     if (environment.token == '') {
-      alert('Sua sessão expirou!')
+      this.alertas.showAlertInfo('Sua sessão expirou!')
       this.router.navigate(['/entrar'])
     }
     this.findByIdUser()

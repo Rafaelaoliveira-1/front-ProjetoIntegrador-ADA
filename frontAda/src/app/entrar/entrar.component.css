@@ -1,6 +1,5 @@
 #img-bg {
   background: url("../../assets/img/img-entrar-mulherCapa.png");
-
   min-height: 100vh;
   background-position: right;
   background-repeat: no-repeat;
@@ -42,4 +41,13 @@ label {
 p {
   font-family: "Roboto", sans-serif;
   font-size: 12pt;
+}
+
+a{
+  color: #89458f;
+  font-weight: bold;
+}
+a:hover{
+  color: #3a0d3d;
+  text-decoration: none;
 }

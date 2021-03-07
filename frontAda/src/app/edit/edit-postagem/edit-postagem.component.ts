@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Postagem } from 'src/app/model/Postagem';
 import { Tema } from 'src/app/model/Tema';
+import { AlertasService } from 'src/app/service/alertas.service';
 import { PostagemService } from 'src/app/service/postagem.service';
 import { TemaService } from 'src/app/service/tema.service';
 import { environment } from 'src/environments/environment.prod';
@@ -28,14 +29,15 @@ export class EditPostagemComponent implements OnInit {
     private router:Router,
     private route:ActivatedRoute,
     private PostagemService: PostagemService,
-    private TemaService: TemaService
+    private TemaService: TemaService,
+    private alertas: AlertasService
 
   ) { }
 
   ngOnInit() {
 
     if (environment.token == '') {
-      alert('Sua sessão expirou!')
+      this.alertas.showAlertInfo('Sua sessão expirou!')
       this.router.navigate(['/entrar'])
     }
     this.idPostagem = this.route.snapshot.params['id']
@@ -52,21 +54,21 @@ export class EditPostagemComponent implements OnInit {
   atualizarTema(){
     this.TemaService.putTema(this.tema).subscribe((resp:Tema)=>{
       this.tema = resp
-      alert('Tema atualizada com sucesso')
+      this.alertas.showAlertSuccess('Tema atualizado com sucesso!')
     })
   }
   
   atualizar(){
     this.PostagemService.putPostagem(this.postagem).subscribe((resp: Postagem)=>{
       this.postagem = resp
-      alert('Postagem atualizada com sucesso')
+      this.alertas.showAlertSuccess('Postagem atualizada com sucesso!')
       this.router.navigate(['/perfil'])
     })
   }
 
   deletar(id:number){
     this.PostagemService.deletePostagem(id).subscribe(()=>{
-      alert ('Postagem deletada com sucesso')
+      this.alertas.showAlertSuccess('Postagem deletada com sucesso!')
       this.router.navigate(['/perfil'])
     })    
   }

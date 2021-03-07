@@ -1,9 +1,9 @@
 <nav
   class="navbar navbar-expand-lg navbar-light back d-flex justify-content-between"
 >
-  <a class="navbar-brand" href="#">
+  <a class="navbar-brand" routerLink='/principal'>
     <img
-      src="../../assets/img/logo-cortado-roxo.png"
+      src="../../assets/img/logo-cortado-roxo.jpg"
       style="height: 35pt"
       alt="logo-ada-roxo"
     />
@@ -73,6 +73,7 @@
               </div>
 
               <div class="ml-auto mt-3 mr-5 d-flex flex-column">
+                <!--  
                 <button
                   class="btn"
                   id="botaoCancelar"
@@ -81,6 +82,7 @@
                 >
                   Editar Tema
                 </button>
+                -->
                 <button
                   class="btn mt-3"
                   id="excluirPostagem"
@@ -135,23 +137,18 @@
   </div>
 </div>
 
-<div class="container-fluid p-0 bottom">
-  <div class="row text-center mt-5">
-    <div class="col-md-12">
-      <a href="#" class="mr-5 font-foot"
-        >Política de privacidade do rede social ADA</a
-      >
-      <a href="#" class="mr-5 font-foot">Sobre</a>
-      <a href="#" class="mr-5 font-foot">Política de direitos autorais</a>
-      <a href="#" class="font-foot">Direitos de marca</a>
-    </div>
+<div id="footer" class="row text-center mt-5">
+  <div class="col-md-12">
+    <a href="#" class="mr-5 font-foot">Política de privacidade do rede social ADA</a>
+    <a href="#" class="mr-5 font-foot">Sobre</a>
+    <a href="#" class="mr-5 font-foot">Política de direitos autorais</a>
+    <a href="#" class="font-foot">Direitos de marca</a>
   </div>
-
-  <footer class="footer">
-    <div class="row d-flex justify-content-center">
-      <p class="text-white bg-roxo footer text-center p-4">ADA 2021 ©</p>
-    </div>
-  </footer>
+</div>
+<div class="row">
+  <div class="col-md-12">
+    <p class=" text-white bg-roxo footer text-center m-0 pt-3">ADA 2021 &copy;</p>
+  </div>
 </div>
 
 <!-- Modal atualizar tema-->
