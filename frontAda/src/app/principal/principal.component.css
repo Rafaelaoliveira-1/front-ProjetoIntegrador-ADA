@@ -96,11 +96,24 @@ textarea {
   border-radius: 15px;
   font-family: "Montserrat", sans-serif;
   letter-spacing: 1px;
+  
 }
-.botaoPostar:hover,
-.botaoEditar:hover {
-  background-color: #3a0d3d;
+
+
+.btn{
+  font-size: 14px;
 }
+
+button:hover{
+  background:#75277c;
+  color: white;
+}
+
+#btnEscolherTema:hover{
+  background: #e79e00f6;
+  color: black;
+}
+
 .foto-publi {
   width: 90px;
   height: 90px;
@@ -152,8 +165,8 @@ textarea {
   padding: 8px;
 }
 .foto-conexao {
-  width: 110px;
-  height: 110px;
+  width: 70px;
+  height: 70px;
 }
 /* Fim Perfil */
 
@@ -206,6 +219,10 @@ textarea {
 .card-text {
   font-family: "Roboto", sans-serif;
 }
+
+
+#txt-noticia{
+  font-size: 14px;
 
 .footer {
   font-size: 18px;

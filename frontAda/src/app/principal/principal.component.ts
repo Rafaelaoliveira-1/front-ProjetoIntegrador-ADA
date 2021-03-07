@@ -4,8 +4,10 @@ import { environment } from 'src/environments/environment.prod';
 import { Postagem } from '../model/Postagem';
 import { Tema } from '../model/Tema';
 import { Usuario } from '../model/Usuario';
+import { NewsApiService } from '../service/newsApi.service';
 import { AlertasService } from '../service/alertas.service';
 import { PostagemService } from '../service/postagem.service';
+
 import { TemaService } from '../service/tema.service';
 
 @Component({
@@ -23,6 +25,7 @@ export class PrincipalComponent implements OnInit {
   listaPostagem:Postagem[]
   listaTema:Tema[]
   listaTemaModal:Tema[]
+  listaNoticia: any[]
 
   busca: string
 
@@ -46,15 +49,19 @@ export class PrincipalComponent implements OnInit {
     private router: Router,
     private TemaService: TemaService,
     private PostagemService: PostagemService,
+    private NewsApiService: NewsApiService,
     private alertas: AlertasService
   ) {}
 
   ngOnInit() {
 
+    
     if (environment.token == '') {
       this.alertas.showAlertInfo('Sua sessão expirou!')
       this.router.navigate(['/entrar'])
     }
+    this.getNews()
+
     this.findAllPostagem()
     this.findAllTema()
   }
@@ -121,6 +128,12 @@ export class PrincipalComponent implements OnInit {
         this.listaPostagem = resp
       })
     }
+  }
+  getNews() {
+    this.NewsApiService.getNoticias().subscribe(resp => {
+      let articlesResult = resp.articles.slice(1, 4);
+      this.listaNoticia = articlesResult
+    })
   }
 
   // findByDescricaoTema() {

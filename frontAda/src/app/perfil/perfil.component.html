@@ -39,6 +39,7 @@
 <!-- FIM NAVEGADOR -->
 
 <!-- MEU PERFIL -->
+<div class="container mt-3">
     <div class="row">
         <!-- COLUNA MENU & POSTAGENS -->
         <div class="col-md-9">
@@ -69,7 +70,7 @@
                                 </div>
                                 <div class="d-flex justify-content-end align-self-start">
 
-                                 <button class="btn botaoEditarPerfil d-flex justify-content-end" [routerLink] ="['/edit-usuario',id]">Editar Perfil</button>
+                                 <button class="btn botaoEditarPerfil d-flex justify-content-end ml-5" id="btnEditarPerfil" [routerLink] ="['/edit-usuario',id]">Editar Perfil</button>
             
                                 </div>
 
@@ -133,9 +134,9 @@
         <!-- COLUNA CONEXÕES-->
         <div class="col-md-3">
            
-            <div class="card conexoes mt-5" style="width: 310px; height: 520px;">
+            <div class="card conexoes mt-5" style="width: 270px; height: 400px;">
     
-                <h3 class="text-center pt-3 font-weight-bold">Conexões</h3> 
+                <h4 class="text-center pt-3 font-weight-bold">Conexões</h4> 
                 
                 <hr>
                 
@@ -166,7 +167,7 @@
 
 
     </div>
-    
+
     <div id="footer" class="row text-center mt-5">
         <div class="col-md-12">
           <a href="#" class="mr-5 font-foot">Política de privacidade do rede social ADA</a>
@@ -178,6 +179,7 @@
     <div class="row">
         <div class="col-md-12">
           <p class=" text-white bg-roxo footer text-center m-0 pt-3">ADA 2021 &copy;</p>
+
         </div>
     </div>
         

@@ -22,7 +22,9 @@ export class CadastrarComponent implements OnInit {
     private alertas: AlertasService
   ) { }
 
-  ngOnInit(){
+  ngOnInit()
+  
+  {
     window.scroll(0,0)
   }
 
