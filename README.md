@@ -23,7 +23,7 @@ O projeto tem como finalidade criar uma **rede de comunidade para mulheres no me
 #### **Frontend:** [Angular](https://angular.io/) + [TypeScript](https://www.typescriptlang.org/) + [Bootstrap](https://getbootstrap.com/)
 
 #### **Backend:** [Spring Boot](https://spring.io/projects/spring-boot) + [Java 8](https://www.java.com/pt-BR/) + [MySQL](https://www.mysql.com/)
-#### **Link Repositório Backend:** [ADA-backend](https://github.com/jackakemi/ADA-backend)
+#### **Link Repositório Backend:** [ADA-backend](https://github.com/DaniloMendesF/Projeto-Integrador-ADA)
 
 ## **:heavy_check_mark: COMO UTILIZAR**
 
