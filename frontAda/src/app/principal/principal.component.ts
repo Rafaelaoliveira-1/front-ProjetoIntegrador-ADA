@@ -109,7 +109,7 @@ export class PrincipalComponent implements OnInit {
       this.postagem = resp
       this.alertas.showAlertSuccess('Postagem realizada com sucesso!')
       this.postagem = new Postagem()
-      this.findAllTema()
+      this.findAllPostagem()
     })
   }
 

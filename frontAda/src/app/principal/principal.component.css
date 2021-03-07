@@ -43,7 +43,6 @@ input {
 }
 .card-body {
   padding-top: 5px;
-
 }
 #hr-perfil {
   margin: 0px !important;
@@ -85,6 +84,9 @@ textarea {
   font-family: "'Mont'serrat", sans-serif;
   letter-spacing: 1px;
 }
+.botaoTema:hover{
+  background: #e79e00f6;
+}
 
 .botaoPostar,
 .botaoEditar {
@@ -94,6 +96,10 @@ textarea {
   border-radius: 15px;
   font-family: "Montserrat", sans-serif;
   letter-spacing: 1px;
+}
+.botaoPostar:hover,
+.botaoEditar:hover {
+  background-color: #3a0d3d;
 }
 .foto-publi {
   width: 90px;
@@ -201,23 +207,21 @@ textarea {
   font-family: "Roboto", sans-serif;
 }
 
-
 .footer {
   font-size: 18px;
 }
 
-.font-foot{
+#footer a{
   font-family: "Montserrat", sans-serif;
   color: #89458f;
   font-weight: bold;
 }
 
-.font-foot :hover{
+#footer a:hover {
   text-decoration: none;
   color: #3a0d3d;
 }
 
-.opac{
+.opac {
   opacity: 1;
 }
-

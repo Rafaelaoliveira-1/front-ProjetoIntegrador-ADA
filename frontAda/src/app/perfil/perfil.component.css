@@ -103,6 +103,10 @@ input {
   font-family: "Montserrat", sans-serif;
   letter-spacing: 1px;
 }
+.botaoEditar:hover,
+.botaoPostar:hover {
+  background-color: #3a0d3d;
+}
 
 /* BOTAO DELETAR */
 
@@ -114,6 +118,10 @@ input {
   font-family: "Montserrat", sans-serif;
   letter-spacing: 1px;
 }
+.botaoEditarPerfil:hover{
+  background: #e79e00f6;
+}
+
 
 /* ================================================================== */
 
@@ -175,9 +183,13 @@ input {
   font-size: 18px;
 }
 
-.font-foot{
+#footer a {
   font-family: "Montserrat", sans-serif;
   color: #89458f;
   font-weight: bold;
 }
 
+#footer a:hover {
+  text-decoration: none;
+  color: #3a0d3d;
+}

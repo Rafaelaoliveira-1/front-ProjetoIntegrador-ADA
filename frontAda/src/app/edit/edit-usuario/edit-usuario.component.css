@@ -100,10 +100,15 @@ label {
   font-family: "Montserrat", sans-serif;
 }
 
-.font-foot {
+#footer a {
   font-family: "Montserrat", sans-serif;
   color: #89458f;
   font-weight: bold;
+}
+
+#footer a:hover {
+  text-decoration: none;
+  color: #3a0d3d;
 }
 
 .footer {

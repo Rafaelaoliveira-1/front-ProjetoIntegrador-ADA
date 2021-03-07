@@ -94,7 +94,7 @@ textarea {
 #botaoCancelar {
   background: #ffb81c;
   color: #000000;
-  font-weight: 500;
+  font-weight: bold;
   border-radius: 15px;
   font-family: "Montserrat", sans-serif;
   letter-spacing: 1px;
@@ -131,14 +131,22 @@ textarea {
   font-family: "Montserrat", sans-serif;
   letter-spacing: 1px;
 }
+.botaoEditar:hover,
+.botaoPostar:hover {
+  background-color: #3a0d3d;
+}
 
 .footer {
   font-size: 18px;
 }
 
-.font-foot{
+#footer a {
   font-family: "Montserrat", sans-serif;
   color: #89458f;
   font-weight: bold;
 }
 
+#footer a:hover {
+  text-decoration: none;
+  color: #3a0d3d;
+}
