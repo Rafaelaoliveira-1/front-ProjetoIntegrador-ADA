@@ -4,6 +4,7 @@ import { environment } from 'src/environments/environment.prod';
 import { Postagem } from '../model/Postagem';
 import { Tema } from '../model/Tema';
 import { Usuario } from '../model/Usuario';
+import { AlertasService } from '../service/alertas.service';
 import { PostagemService } from '../service/postagem.service';
 import { TemaService } from '../service/tema.service';
 
@@ -45,12 +46,13 @@ export class PrincipalComponent implements OnInit {
     private router: Router,
     private TemaService: TemaService,
     private PostagemService: PostagemService,
+    private alertas: AlertasService
   ) {}
 
   ngOnInit() {
 
     if (environment.token == '') {
-      alert('Sua sessão expirou!')
+      this.alertas.showAlertInfo('Sua sessão expirou!')
       this.router.navigate(['/entrar'])
     }
     this.findAllPostagem()
@@ -91,7 +93,7 @@ export class PrincipalComponent implements OnInit {
   
     this.TemaService.postTema(this.tema).subscribe((resp:Tema) =>{
       this.tema = resp
-      alert('Cadastrado com sucesso!')
+      
       this.findAllTema()
       this.tema = new Tema()
     })
@@ -105,7 +107,7 @@ export class PrincipalComponent implements OnInit {
 
     this.PostagemService.postPostagem(this.postagem).subscribe((resp:Postagem) =>{
       this.postagem = resp
-      alert('Postagem realizada com sucesso!')
+      this.alertas.showAlertSuccess('Postagem realizada com sucesso!')
       this.postagem = new Postagem()
       this.findAllTema()
     })
