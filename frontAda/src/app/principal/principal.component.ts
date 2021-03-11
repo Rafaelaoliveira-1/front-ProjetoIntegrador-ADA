@@ -141,10 +141,20 @@ export class PrincipalComponent implements OnInit {
       })
     }
   }
+
   getNews() {
     this.NewsApiService.getNoticias().subscribe(resp => {
       let articlesResult = resp.articles.slice(1, 4);
       this.listaNoticia = articlesResult
+    })
+  }
+
+  deleteTemaById(id: number){
+    this.TemaService.deleteTema(id).subscribe(() => {
+      this.PostagemService.deletePostagem(id)
+      this.alertas.showAlertSuccess('Tema deletado com sucesso!')
+      this.findAllPostagem() 
+      this.findAllTema()
     })
   }
 
