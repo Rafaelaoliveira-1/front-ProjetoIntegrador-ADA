@@ -119,17 +119,24 @@ export class PrincipalComponent implements OnInit {
   }
 
   postar(){
-    this.tema.id = this.idTema
-    this.postagem.tema = this.tema
-    this.user.id = this.idUser
-    this.postagem.usuario = this.user
+    if (this.tema.tipoTema == null) {
+      this.alertas.showAlertInfo('Escolha um tema para postar!')
+    } else if (this.postagem.descricaoPostagem == null) {
+      this.alertas.showAlertInfo('Escreva uma postagem para postar!')
+    } else {
+      this.tema.id = this.idTema
+      this.postagem.tema = this.tema
+      this.user.id = this.idUser
+      this.postagem.usuario = this.user
 
-    this.PostagemService.postPostagem(this.postagem).subscribe((resp:Postagem) =>{
-      this.postagem = resp
-      this.alertas.showAlertSuccess('Postagem realizada com sucesso!')
-      this.postagem = new Postagem()
-      this.findAllPostagem()
-    })
+      this.PostagemService.postPostagem(this.postagem).subscribe((resp:Postagem) =>{
+        this.postagem = resp
+        this.alertas.showAlertSuccess('Postagem realizada com sucesso!')
+        this.postagem = new Postagem()
+        this.findAllPostagem()
+      })
+    }    
+
   }
 
   findByDescricaoPostagem() {
