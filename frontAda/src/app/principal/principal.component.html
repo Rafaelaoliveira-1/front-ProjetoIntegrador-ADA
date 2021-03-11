@@ -195,7 +195,7 @@
     
             </div>
             <!-- Parte de baixo do card com tamanho para caber com a parte de cima-->
-            <div class="card perfil-texto bg-roxo sh" style="width: 270px; height: 240px;">
+            <div class="card perfil-texto bg-roxo sh" style="width: 270px;">
                 <!-- Parter que centraliza os textos do card -->
                 <div class="card-body text-center">
                     <!-- Parte de baixo do card com tamanho para caber com a parte de cima, e define as bordas de baixo -->
@@ -225,43 +225,31 @@
                 </div>
     
             </div> 
-    
-            <div class="card conexoes mt-5  " style="width: 270px; height: 400px;">
+            <!-- CARD DE CONEXÕES -->
+            <div class="card conexoes mt-5  " style="width: 270px;">
     
                 <h4 class="text-center pt-3 font-weight-bold p-0">Conexões</h4> 
                 
                 <hr>
     
                 <div class="row text-center px-3">
-    
-                    <div class="col-md-6">
-                        <img src="https://i.imgur.com/20PfQdL.jpg" alt="" class="img-fluid rounded-circle bs foto-conexao">
-                        <h6 class="fs-c mt-2"> Juliana Serdan </h6>
-                        <img src="https://i.imgur.com/yNcdiBw.jpg" alt="" class="img-fluid rounded-circle bs foto-conexao">
-                        <h6 class="fs-c mt-2"> Heloisa Beatriz </h6>
-                        <img src="https://i.imgur.com/U4l29Sr.jpg" alt="" class="img-fluid rounded-circle bs foto-conexao">
-                        <h6 class="fs-c mt-2"> Jackeline Akemi </h6>
-                    </div>
-    
-                    <div class="col-md-6">
-                        <img src="https://i.imgur.com/55rP31I.jpg"  alt="" class="img-fluid rounded-circle bs foto-conexao">
-                        <h6 class="fs-c mt-2"> Beatriz Martins </h6>
-                        <img src="https://i.imgur.com/kxS2saL.jpg"  alt="" class="img-fluid rounded-circle bs foto-conexao">
-                        <h6 class="fs-c mt-2"> Bárbara Liboni </h6>
-                        <img src="https://i.imgur.com/KiZPmF1.jpg"  alt="" class="img-fluid rounded-circle bs foto-conexao">
-                        <h6 class="fs-c mt-2"> Venôrica Almenara</h6>
-                    </div>
-    
+                    <div class="col-md-6" *ngFor = 'let item of listaUsuario'>
+                        <a [routerLink]="['/conexao',item.id]">
+                            <img src="{{item.foto}}" alt="" class="img-fluid rounded-circle bs foto-conexao">
+                            <h6 class="fs-c mt-2"> {{item.nomeCompleto}} </h6>
+                        </a>
+                    </div>   
                 </div>
             </div>
+            <!-- FIM CONEXÕES -->
                 
-    <!-- FIM PERFIL ======================================================================================================== -->
+    <!-- FIM PERFIL -->
         </section>
         </div>
     </div>
 </div>
 
-<!-- RODAPÉ ======================================================================================================== -->
+<!-- RODAPÉ -->
 <div id="footer" class="row text-center mt-5">
     <div class="col-md-12">
       <a href="#" class="mr-5 font-foot">Política de privacidade do rede social ADA</a>

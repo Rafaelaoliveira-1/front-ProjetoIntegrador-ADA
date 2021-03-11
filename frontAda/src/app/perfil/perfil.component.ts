@@ -22,6 +22,7 @@ export class PerfilComponent implements OnInit {
 
   listaPostagem:Postagem[]
   listaTema:Tema[]
+  listaUsuario:Usuario[]
 
   tipoTema: string
   tipoPostagem: string
@@ -41,25 +42,34 @@ export class PerfilComponent implements OnInit {
     private router: Router,
     private TemaService: TemaService,
     private PostagemService: PostagemService,
-    private AuthService: AuthService, 
+    private auth: AuthService, 
     private alertas: AlertasService
 
   ) { }
 
   ngOnInit() {
 
+    window.scroll(0,0)
+
     if (environment.token == '') {
       this.alertas.showAlertInfo('Sua sessão expirou!')
       this.router.navigate(['/entrar'])
     }
     this.findByIdUser()
+    this.findAllUsuario()
   }
 
   findByIdUser(){
-    this.AuthService.getByIdUser(this.id).subscribe((resp: Usuario)=>{
+    this.auth.getByIdUser(this.id).subscribe((resp: Usuario)=>{
       this.user = resp
       this.listaPostagem = this.user.postagem.reverse()
-      console.log(this.listaPostagem)
+    })
+  }
+  findAllUsuario(){
+    this.auth.getAllUser().subscribe((resp:Usuario[])=>{
+      this.listaUsuario = resp
+      this.listaUsuario.splice(environment.id-1,1)
+      this.listaUsuario = this.listaUsuario.slice(0,6)
     })
   }
 }

@@ -15,6 +15,7 @@ import { EditPostagemComponent } from './edit/edit-postagem/edit-postagem.compon
 import { PerfilComponent } from './perfil/perfil.component';
 import { OrderModule } from 'ngx-order-pipe';
 import { AlertasComponent } from './alertas/alertas.component';
+import { ConexaoComponent } from './conexao/conexao.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { AlertasComponent } from './alertas/alertas.component';
     EditUsuarioComponent,
     EditPostagemComponent,
     PerfilComponent,
-    AlertasComponent
+    AlertasComponent,
+    ConexaoComponent
   ],
   imports: [
     BrowserModule,

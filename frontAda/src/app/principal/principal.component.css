@@ -84,7 +84,7 @@ textarea {
   font-family: "'Mont'serrat", sans-serif;
   letter-spacing: 1px;
 }
-.botaoTema:hover{
+.botaoTema:hover {
   background: #e79e00f6;
 }
 
@@ -96,20 +96,18 @@ textarea {
   border-radius: 15px;
   font-family: "Montserrat", sans-serif;
   letter-spacing: 1px;
-  
 }
 
-
-.btn{
+.btn {
   font-size: 14px;
 }
 
-button:hover{
-  background:#75277c;
+button:hover {
+  background: #75277c;
   color: white;
 }
 
-#btnEscolherTema:hover{
+#btnEscolherTema:hover {
   background: #e79e00f6;
   color: black;
 }
@@ -154,6 +152,7 @@ button:hover{
 .nome {
   font-size: 20px;
   font-weight: bold;
+  line-height: 1.3rem;
 }
 
 .conexoes-postagens {
@@ -176,6 +175,16 @@ button:hover{
   border-radius: 2rem;
   background-color: #cd9ccc;
   box-shadow: #acacac 4px 4px 8px;
+}
+.conexoes a {
+  text-decoration: none;
+  color: #000000;
+}
+.conexoes a img:hover {
+  transform: scale(1.1);
+}
+.conexoes a img:hover {
+  transition: all 0.3s ease-out;
 }
 
 .fs-c {
@@ -220,8 +229,7 @@ button:hover{
   font-family: "Roboto", sans-serif;
 }
 
-
-#txt-noticia{
+#txt-noticia {
   font-size: 14px;
 }
 
@@ -229,7 +237,7 @@ button:hover{
   font-size: 18px;
 }
 
-#footer a{
+#footer a {
   font-family: "Montserrat", sans-serif;
   color: #89458f;
   font-weight: bold;

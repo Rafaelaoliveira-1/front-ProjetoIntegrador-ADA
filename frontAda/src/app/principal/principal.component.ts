@@ -9,6 +9,7 @@ import { AlertasService } from '../service/alertas.service';
 import { PostagemService } from '../service/postagem.service';
 
 import { TemaService } from '../service/tema.service';
+import { AuthService } from '../service/auth.service';
 
 @Component({
   selector: 'app-principal',
@@ -26,6 +27,9 @@ export class PrincipalComponent implements OnInit {
   listaTema:Tema[]
   listaTemaModal:Tema[]
   listaNoticia: any[]
+  listaUsuario:Usuario[]
+  listaConexao:Usuario[]
+  indice:number
 
   busca: string
 
@@ -47,6 +51,7 @@ export class PrincipalComponent implements OnInit {
 
   constructor(
     private router: Router,
+    private auth: AuthService,
     private TemaService: TemaService,
     private PostagemService: PostagemService,
     private NewsApiService: NewsApiService,
@@ -54,8 +59,6 @@ export class PrincipalComponent implements OnInit {
   ) {}
 
   ngOnInit() {
-
-    
     if (environment.token == '') {
       this.alertas.showAlertInfo('Sua sessão expirou!')
       this.router.navigate(['/entrar'])
@@ -64,6 +67,7 @@ export class PrincipalComponent implements OnInit {
 
     this.findAllPostagem()
     this.findAllTema()
+    this.findAllUsuario()
   }
 
   findAllPostagem(){
@@ -76,6 +80,14 @@ export class PrincipalComponent implements OnInit {
     this.TemaService.getAllTema().subscribe((resp:Tema[]) =>{
       this.listaTema = resp
       this.listaTemaModal = resp.reverse()
+    })
+  }
+
+  findAllUsuario(){
+    this.auth.getAllUser().subscribe((resp:Usuario[])=>{
+      this.listaUsuario = resp
+      this.listaUsuario.splice(environment.id-1,1)
+      this.listaUsuario = this.listaUsuario.slice(0,6)
     })
   }
 
