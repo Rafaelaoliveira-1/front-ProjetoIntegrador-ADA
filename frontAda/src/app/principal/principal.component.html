@@ -317,14 +317,14 @@
                 <table class="table table-hover mt-3">
                     <thead>
                       <tr>
-                        <th class="Montserrat" scope="col">Id</th>
+                        <th *ngIf='auth.adm()' class="Montserrat" scope="col">Id</th>
                         <th class="Montserrat" scope="col">Tema</th>
                         <th class="text-right Montserrat" scope="col">Modificar</th>
                       </tr>
                     </thead>
                     <tbody>
                       <tr *ngFor='let item of listaTemaModal'>
-                        <th scope="row" >{{item.id}}</th>
+                        <th *ngIf='auth.adm()' scope="row" >{{item.id}}</th>
                         <td class="roboto">{{item.descricaoTema}}</td>
                         <td class="d-flex justify-content-end">
                             <button class="btn botaoTema" id="{{item.id}}" (click)='selecionar($event)' data-dismiss="modal">Selecionar</button>

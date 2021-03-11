@@ -9,6 +9,7 @@ import { AlertasService } from '../service/alertas.service';
 import { PostagemService } from '../service/postagem.service';
 
 import { TemaService } from '../service/tema.service';
+import { AuthService } from '../service/auth.service';
 
 @Component({
   selector: 'app-principal',
@@ -50,7 +51,8 @@ export class PrincipalComponent implements OnInit {
     private TemaService: TemaService,
     private PostagemService: PostagemService,
     private NewsApiService: NewsApiService,
-    private alertas: AlertasService
+    private alertas: AlertasService,
+    public auth: AuthService
   ) {}
 
   ngOnInit() {
