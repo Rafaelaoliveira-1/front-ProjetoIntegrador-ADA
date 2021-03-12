@@ -109,8 +109,9 @@ export class PrincipalComponent implements OnInit {
       this.TemaService.postTema(this.tema).subscribe((resp:Tema) =>{
         this.tema = resp
         
-        this.findAllTema()
         this.tema = new Tema()
+        this.findAllTema()
+        
       })
     }
 
