@@ -68,6 +68,7 @@ export class PrincipalComponent implements OnInit {
     this.findAllPostagem()
     this.findAllTema()
     this.findAllUsuario()
+    this.contadorPublicacoes()
   }
 
   findAllPostagem(){
@@ -131,6 +132,11 @@ export class PrincipalComponent implements OnInit {
       this.findAllPostagem()
     })
   }
+
+  //contadorPublicacoes(){
+    //let numeroPublucacoes = 0
+    //console.log(this.listaPostagem)
+ // }
 
   findByDescricaoPostagem() {
     if (this.busca == '') {
