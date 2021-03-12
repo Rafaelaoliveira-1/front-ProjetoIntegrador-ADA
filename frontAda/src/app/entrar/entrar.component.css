@@ -43,11 +43,21 @@ p {
   font-size: 12pt;
 }
 
-a{
+a {
   color: #89458f;
   font-weight: bold;
 }
-a:hover{
+a:hover {
   color: #3a0d3d;
   text-decoration: none;
+}
+
+@media (max-width: 767px) {
+  /* Logo */
+  img {
+    margin-top: 20px;
+  }
+  #img-bg {
+    visibility: hidden;
+  }
 }

@@ -243,3 +243,9 @@ button:hover{
 .opac {
   opacity: 1;
 }
+
+@media(max-width:767px){
+  #noticias{
+    
+  }
+}
