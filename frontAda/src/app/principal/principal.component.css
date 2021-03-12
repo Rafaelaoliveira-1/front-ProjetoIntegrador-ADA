@@ -84,7 +84,7 @@ textarea {
   font-family: "'Mont'serrat", sans-serif;
   letter-spacing: 1px;
 }
-.botaoTema:hover{
+.botaoTema:hover {
   background: #e79e00f6;
 }
 
@@ -96,20 +96,18 @@ textarea {
   border-radius: 15px;
   font-family: "Montserrat", sans-serif;
   letter-spacing: 1px;
-  
 }
 
-
-.btn{
+.btn {
   font-size: 14px;
 }
 
-button:hover{
-  background:#75277c;
+button:hover {
+  background: #75277c;
   color: white;
 }
 
-#btnEscolherTema:hover{
+#btnEscolherTema:hover {
   background: #e79e00f6;
   color: black;
 }
@@ -128,6 +126,9 @@ button:hover{
   letter-spacing: 1px;
 }
 
+#container {
+  margin-top: 2rem;
+}
 /* Perfil */
 .bg-roxo {
   background-color: #cd9ccc;
@@ -157,8 +158,7 @@ button:hover{
 }
 
 .conexoes-postagens {
-  text-align: left;
-  padding-left: 35px;
+  text-align: center;
 }
 
 .titulo-card {
@@ -220,8 +220,7 @@ button:hover{
   font-family: "Roboto", sans-serif;
 }
 
-
-#txt-noticia{
+#txt-noticia {
   font-size: 14px;
 }
 
@@ -229,7 +228,7 @@ button:hover{
   font-size: 18px;
 }
 
-#footer a{
+#footer a {
   font-family: "Montserrat", sans-serif;
   color: #89458f;
   font-weight: bold;
@@ -243,9 +242,48 @@ button:hover{
 .opac {
   opacity: 1;
 }
+@media (max-width: 767px) {
+  /* Layout pagina principal */
+  #container {
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+  }
 
-@media(max-width:767px){
-  #noticias{
+  /* Card perfil */
+  #perfil {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 40px;
+  }
+  #cards,
+  #container {
+    margin-top: 1rem;
+  }
+
+  .perfil-texto {
+    width: 93vw !important;
+  }
+  .perfil-fundo {
+    width: 93vw !important;
+  }
+
+  .foto-perfil {
+    width: 150px;
+  }
+  .conexoes-postagens {
+    margin-right: 50px;
+  }
+
+  /* Noticias */
+  #noticias {
+    display: none;
+  }
+
+  /* Conexões */
+
+  .conexoes {
     display: none;
   }
 }

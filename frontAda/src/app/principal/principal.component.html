@@ -33,8 +33,8 @@
 
 <div class="container-fluid">
     <!-- Cards-->
-    <div class="container mt-5">
-        <div class="row">
+    <div id="cards" class="container">
+        <div id="container" class="row">
             <div class="col-sm-3 d-none d-sm-block">
                 <section id="noticias" class="sticky">
                     <h4 class="text-center mont">Notícias</h4>
@@ -182,7 +182,7 @@
     <!-- PERFIL ========================================================================================== -->
             <!-- Parte de cima do card com o tamanho para caber com a parte de baixo, e define as bordas de cima-->
             <section id="perfil" class="sticky">
-                <div class="card perfil-fundo  sh" style="width: 270px; height: 190px;">
+                <div class="card perfil-fundo sh" style="width: 270px; height: 190px;">
                     <!-- Parque que centraliza a foto -->
                     <div class="card-body text-center">
                         <!-- Parte da imagem com a medida definida e arredondamento da imagem -->
@@ -201,9 +201,9 @@
                             <div class="titulo-card">
         
                                 <!-- Parte que define o font-size de 20px-->
-                                <p class="nome mt-2"> {{nomeCompleto}} </p>
+                                <p class="nome mt-2 conexoes-postagens"> {{nomeCompleto}} </p>
                                 <!-- Parte do cargo -->
-                                <p> {{cargo}} </p>
+                                <p class="conexoes-postagens"> {{cargo}} </p>
                                 <!-- Parte que define o font-size de 15px-->
                             
                             </div>
@@ -212,7 +212,7 @@
                             
                             <p class="conexoes-postagens"> 12 Postagens </p>
                             <!-- Parte que exibe data de entrada -->
-                            <p> Ingressou em Março de 2021 </p>
+                            <p class="conexoes-postagens"> Ingressou em Março de 2021 </p>
                     
                         </div>
                         <!-- Botão editar para modificar o perfil do usuário -->

@@ -55,7 +55,10 @@ export class PrincipalComponent implements OnInit {
 
   ngOnInit() {
 
-    
+    if (environment.token == '') {
+      this.alertas.showAlertInfo('Sua sessão expirou!')
+      this.router.navigate(['/entrar'])
+    }
     this.getNews()
 
     this.findAllPostagem()
