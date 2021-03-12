@@ -98,14 +98,24 @@ export class PrincipalComponent implements OnInit {
   }
 
   cadastrar(){
-    this.tema.tipoTema = this.tipoTema
-  
-    this.TemaService.postTema(this.tema).subscribe((resp:Tema) =>{
-      this.tema = resp
+    document.body.style.paddingRight='0px'
+    if (this.tipoTema == null) {
+      this.alertas.showAlertInfo('Escolha um tipo de tema!')
+    } else if (this.tema.descricaoTema == null){
+      this.alertas.showAlertInfo('Digite um tema para cadastrar!')
+    } else {
+      this.alertas.showAlertSuccess('Tema novo cadastrado com sucesso!')
+      this.tema.tipoTema = this.tipoTema
+    
+      this.TemaService.postTema(this.tema).subscribe((resp:Tema) =>{
+        this.tema = resp
+        
+        this.findAllTema()
+        this.tema = new Tema()
+      })
+    }
+
       
-      this.findAllTema()
-      this.tema = new Tema()
-    })
   }
 
   postar(){

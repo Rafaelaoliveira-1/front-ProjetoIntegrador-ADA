@@ -294,7 +294,8 @@
             </div>
             <div class="modal-body">
                 <label class="roboto" for="tipoTema" style="font-weight: 600;">Escolha o tipo do tema:</label>
-                <select class="form-control roboto" name="tipoTema" id="tipoTema" (click)="tipoTheme($event)"> 
+                <select class="form-control roboto" name="tipoTema" id="tipoTema" (click)="tipoTheme($event)">
+                    <option selected disabled>Selecione um tipo de tema</option> 
                     <option value="Tema Livre">Tema Livre</option>
                     <option value="Vaga">Vaga</option>
                     <option value="Dúvida">Dúvida</option>
