@@ -328,13 +328,13 @@
                         <th *ngIf='auth.adm()' scope="row" >{{item.id}}</th>
                         <td class="roboto">{{item.descricaoTema}}</td>
                         <td class="d-flex justify-content-end">
-                            <button class="btn botaoTema" id="{{item.id}}" (click)='selecionar($event)' data-dismiss="modal">Selecionar</button>
+                            <button *ngIf='auth.adm()' class="btn deletarTema" id="{{item.id}}" (click)='deleteTemaById(item.id)'>Deletar</button>
+                            <button class="btn botaoTema ml-1" id="{{item.id}}" (click)='selecionar($event)' data-dismiss="modal">Selecionar</button>
                         </td>
                       </tr>
                     
                     </tbody>
                   </table>
-
 
             </div>
             <div class="modal-footer">
