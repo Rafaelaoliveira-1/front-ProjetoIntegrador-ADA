@@ -5,7 +5,8 @@ export const environment = {
   id: 0,
   foto: '',
   cargo:'',
-  link:''
+  link:'',
+  tipo: ''
 };
 
 

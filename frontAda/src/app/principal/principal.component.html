@@ -294,7 +294,8 @@
             </div>
             <div class="modal-body">
                 <label class="roboto" for="tipoTema" style="font-weight: 600;">Escolha o tipo do tema:</label>
-                <select class="form-control roboto" name="tipoTema" id="tipoTema" (click)="tipoTheme($event)"> 
+                <select class="form-control roboto" name="tipoTema" id="tipoTema" (click)="tipoTheme($event)">
+                    <option selected disabled>Selecione um tipo de tema</option> 
                     <option value="Tema Livre">Tema Livre</option>
                     <option value="Vaga">Vaga</option>
                     <option value="Dúvida">Dúvida</option>
@@ -317,23 +318,23 @@
                 <table class="table table-hover mt-3">
                     <thead>
                       <tr>
-                        <th class="Montserrat" scope="col">Id</th>
+                        <th *ngIf='auth.adm()' class="Montserrat" scope="col">Id</th>
                         <th class="Montserrat" scope="col">Tema</th>
                         <th class="text-right Montserrat" scope="col">Modificar</th>
                       </tr>
                     </thead>
                     <tbody>
                       <tr *ngFor='let item of listaTemaModal'>
-                        <th scope="row" >{{item.id}}</th>
+                        <th *ngIf='auth.adm()' scope="row" >{{item.id}}</th>
                         <td class="roboto">{{item.descricaoTema}}</td>
                         <td class="d-flex justify-content-end">
-                            <button class="btn botaoTema" id="{{item.id}}" (click)='selecionar($event)' data-dismiss="modal">Selecionar</button>
+                            <button *ngIf='auth.adm()' class="btn deletarTema" id="{{item.id}}" (click)='deleteTemaById(item.id)'>Deletar</button>
+                            <button class="btn botaoTema ml-1" id="{{item.id}}" (click)='selecionar($event)' data-dismiss="modal">Selecionar</button>
                         </td>
                       </tr>
                     
                     </tbody>
                   </table>
-
 
             </div>
             <div class="modal-footer">

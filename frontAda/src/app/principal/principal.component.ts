@@ -9,6 +9,7 @@ import { AlertasService } from '../service/alertas.service';
 import { PostagemService } from '../service/postagem.service';
 
 import { TemaService } from '../service/tema.service';
+import { AuthService } from '../service/auth.service';
 
 @Component({
   selector: 'app-principal',
@@ -50,7 +51,8 @@ export class PrincipalComponent implements OnInit {
     private TemaService: TemaService,
     private PostagemService: PostagemService,
     private NewsApiService: NewsApiService,
-    private alertas: AlertasService
+    private alertas: AlertasService,
+    public auth: AuthService
   ) {}
 
   ngOnInit() {
@@ -95,28 +97,45 @@ export class PrincipalComponent implements OnInit {
   }
 
   cadastrar(){
-    this.tema.tipoTema = this.tipoTema
-  
-    this.TemaService.postTema(this.tema).subscribe((resp:Tema) =>{
-      this.tema = resp
+    document.body.style.paddingRight='0px'
+    if (this.tipoTema == null) {
+      this.alertas.showAlertInfo('Escolha um tipo de tema!')
+    } else if (this.tema.descricaoTema == null){
+      this.alertas.showAlertInfo('Digite um tema para cadastrar!')
+    } else {
+      this.alertas.showAlertSuccess('Tema novo cadastrado com sucesso!')
+      this.tema.tipoTema = this.tipoTema
+    
+      this.TemaService.postTema(this.tema).subscribe((resp:Tema) =>{
+        this.tema = resp
+        
+        this.findAllTema()
+        this.tema = new Tema()
+      })
+    }
+
       
-      this.findAllTema()
-      this.tema = new Tema()
-    })
   }
 
   postar(){
-    this.tema.id = this.idTema
-    this.postagem.tema = this.tema
-    this.user.id = this.idUser
-    this.postagem.usuario = this.user
+    if (this.tema.tipoTema == null) {
+      this.alertas.showAlertInfo('Escolha um tema para postar!')
+    } else if (this.postagem.descricaoPostagem == null) {
+      this.alertas.showAlertInfo('Escreva uma postagem para postar!')
+    } else {
+      this.tema.id = this.idTema
+      this.postagem.tema = this.tema
+      this.user.id = this.idUser
+      this.postagem.usuario = this.user
 
-    this.PostagemService.postPostagem(this.postagem).subscribe((resp:Postagem) =>{
-      this.postagem = resp
-      this.alertas.showAlertSuccess('Postagem realizada com sucesso!')
-      this.postagem = new Postagem()
-      this.findAllPostagem()
-    })
+      this.PostagemService.postPostagem(this.postagem).subscribe((resp:Postagem) =>{
+        this.postagem = resp
+        this.alertas.showAlertSuccess('Postagem realizada com sucesso!')
+        this.postagem = new Postagem()
+        this.findAllPostagem()
+      })
+    }    
+
   }
 
   findByDescricaoPostagem() {
@@ -128,10 +147,20 @@ export class PrincipalComponent implements OnInit {
       })
     }
   }
+
   getNews() {
     this.NewsApiService.getNoticias().subscribe(resp => {
       let articlesResult = resp.articles.slice(1, 4);
       this.listaNoticia = articlesResult
+    })
+  }
+
+  deleteTemaById(id: number){
+    this.TemaService.deleteTema(id).subscribe(() => {
+      this.PostagemService.deletePostagem(id)
+      this.alertas.showAlertSuccess('Tema deletado com sucesso!')
+      this.findAllPostagem() 
+      this.findAllTema()
     })
   }
 
