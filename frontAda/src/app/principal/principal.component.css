@@ -246,6 +246,6 @@ button:hover{
 
 @media(max-width:767px){
   #noticias{
-    
+    display: none;
   }
 }

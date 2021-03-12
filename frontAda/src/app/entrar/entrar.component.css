@@ -58,6 +58,6 @@ a:hover {
     margin-top: 20px;
   }
   #img-bg {
-    visibility: hidden;
+    display: none;
   }
 }

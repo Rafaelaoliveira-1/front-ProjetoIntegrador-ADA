@@ -53,6 +53,6 @@ label {
   /* Imagem de background*/
 
   #img-bg {
-    visibility: hidden;
+    display: none;
   }
 }
