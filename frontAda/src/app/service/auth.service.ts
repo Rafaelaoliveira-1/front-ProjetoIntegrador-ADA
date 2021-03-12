@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
+import { environment } from 'src/environments/environment.prod';
 import { UserLogin } from '../model/UserLogin';
 import { Usuario } from '../model/Usuario';
 
@@ -27,6 +28,15 @@ export class AuthService {
 
   putUser(usuario: Usuario): Observable<Usuario>{
     return this.http.put<Usuario>('http://localhost:8080/usuario', usuario)
+  }
+
+  adm() {
+    let ok: boolean = false
+
+    if (environment.tipo == 'adm'){
+      ok = true
+    }
+    return ok
   }
 
 }
