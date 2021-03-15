@@ -39,7 +39,6 @@ export class PrincipalComponent implements OnInit {
   idTema:number
   idPostagem:number
   idUser = environment.id
-  idcheck:number
 
   nomeCompleto = environment.nomeCompleto
   foto = environment.foto
@@ -48,6 +47,8 @@ export class PrincipalComponent implements OnInit {
 
   key = 'dataHora'
   reverse = true
+
+  //contaPostagem: number
 
   constructor(
     private router: Router,
@@ -68,7 +69,7 @@ export class PrincipalComponent implements OnInit {
     this.findAllPostagem()
     this.findAllTema()
     this.findAllUsuario()
-    this.contadorPublicacoes()
+    
   }
 
   findAllPostagem(){
@@ -130,13 +131,21 @@ export class PrincipalComponent implements OnInit {
       this.alertas.showAlertSuccess('Postagem realizada com sucesso!')
       this.postagem = new Postagem()
       this.findAllPostagem()
+      //this.contadorPublicacoes()
     })
   }
+// lógica do gustavo
+//   contadorPublicacoes(){
+//     this.contaPostagem += 1
+//  }
 
-  //contadorPublicacoes(){
-    //let numeroPublucacoes = 0
-    //console.log(this.listaPostagem)
- // }
+//   retiraPublicacoes(){
+//     this.contaPostagem -= 1
+//   }
+
+contaPostagem(){
+  
+}
 
   findByDescricaoPostagem() {
     if (this.busca == '') {
@@ -174,5 +183,7 @@ export class PrincipalComponent implements OnInit {
   //     })
   //     }
   //   }
+
+
 
 }

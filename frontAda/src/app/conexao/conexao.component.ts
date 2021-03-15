@@ -17,6 +17,8 @@ export class ConexaoComponent implements OnInit {
   idConexao: number
   user:Usuario = new Usuario()
   listaPostagem: Postagem[]
+  numeroConexao: number
+
   
   constructor(
     private route: ActivatedRoute,
@@ -44,4 +46,10 @@ export class ConexaoComponent implements OnInit {
       this.listaPostagem = this.user.postagem.reverse()
     })
   }
+
+
+  contaConexoes(){
+    this.numeroConexao += 1
+  }
+
 }
