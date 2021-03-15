@@ -17,7 +17,9 @@ export class ConexaoComponent implements OnInit {
   idConexao: number
   user:Usuario = new Usuario()
   listaPostagem: Postagem[]
-  numeroConexao: number
+  listaUsuario:Usuario[]
+  contaPostagem: number
+  contaConexao: number
 
   
   constructor(
@@ -38,18 +40,22 @@ export class ConexaoComponent implements OnInit {
     }
     this.idConexao = this.route.snapshot.params['id']
     this.findByIdUser()
+    this.findAllUsuario()
   }
 
   findByIdUser(){
     this.auth.getByIdUser(this.idConexao).subscribe((resp: Usuario)=>{
       this.user = resp
       this.listaPostagem = this.user.postagem.reverse()
+      this.contaPostagem = this.listaPostagem.length
     })
   }
 
-
-  contaConexoes(){
-    this.numeroConexao += 1
+    findAllUsuario(){
+    this.auth.getAllUser().subscribe((resp:Usuario[])=>{
+      this.listaUsuario = resp
+      this.contaConexao = (this.listaUsuario.length - 1)
+    })
   }
 
 }

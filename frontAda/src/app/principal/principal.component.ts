@@ -95,7 +95,7 @@ export class PrincipalComponent implements OnInit {
   findAllUsuario(){
     this.auth.getAllUser().subscribe((resp:Usuario[])=>{
       this.listaUsuario = resp
-      this.contaConexoes = this.listaUsuario.length
+      this.contaConexoes = (this.listaUsuario.length - 1)
       this.listaUsuario.splice(environment.id-1,1)
       this.listaUsuario = this.listaUsuario.slice(0,6)
     })
@@ -104,11 +104,6 @@ export class PrincipalComponent implements OnInit {
   tipoTheme(event: any){
     this.tipoTema = event.target.value
   }
-  // implementação
-  // editarPostagem(event:any){
-  // this.idPostagem = event.target.id
-  //  console.log(this.idPostagem)
-  // }
 
   selecionar(event:any){
     this.idTema = event.target.id
@@ -152,6 +147,7 @@ export class PrincipalComponent implements OnInit {
       })
     }
   }
+
   getNews() {
     this.NewsApiService.getNoticias().subscribe(resp => {
       let articlesResult = resp.articles.slice(1, 4);
