@@ -53,6 +53,7 @@ textarea {
   resize: none;
   border-radius: 15px;
   color: black;
+  width: 100%;
 }
 
 .mont {
@@ -112,9 +113,15 @@ textarea {
 #excluirPostagem:hover {
   background: rgb(204, 33, 33);
 }
+.modalTema{
+  border-radius: 15px;
+}
 
 #botaoEnter {
   color: white;
+}
+.dropdown-item{
+  padding-left: 0;
 }
 
 #botaoCancelar:hover {

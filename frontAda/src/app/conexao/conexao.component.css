@@ -30,6 +30,10 @@
   input {
     font-family: "Roboto", sans-serif;
   }
+  .dropdown-item{
+    padding-left: 0;
+  }
+  
   
   /* Conexões */
   .conexoes {

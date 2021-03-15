@@ -76,6 +76,12 @@ textarea {
 .roboto {
   font-family: "Roboto", sans-serif;
 }
+.dropdown-item{
+  padding-left: 0;
+}
+#principal{
+  margin-right: 1;
+}
 
 .botaoTema {
   background-color: #ffb81c;
@@ -133,6 +139,9 @@ button:hover {
 /* Perfil */
 .bg-roxo {
   background-color: #cd9ccc;
+}
+.bg-purple{
+  background-color: #89458f;
 }
 
 .perfil-fundo {
@@ -232,7 +241,7 @@ button:hover {
   font-family: "Roboto", sans-serif;
 }
 
-#txt-noticia {
+.txt-noticia {
   font-size: 14px;
 }
 

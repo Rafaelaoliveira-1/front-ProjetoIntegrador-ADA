@@ -38,6 +38,7 @@ export class EditPostagemComponent implements OnInit {
   ngOnInit() {
     
     window.scroll(0,0)
+    document.body.style.paddingRight='0px'
 
     if (environment.token == '') {
       this.alertas.showAlertInfo('Sua sessão expirou!')

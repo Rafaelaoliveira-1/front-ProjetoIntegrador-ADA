@@ -37,6 +37,7 @@ export class PrincipalComponent implements OnInit {
   tipoPostagem: string
   contaPostagem: number
   contaConexoes:number
+  temaRepetido:boolean
 
   idTema:number
   idPostagem:number
@@ -52,7 +53,6 @@ export class PrincipalComponent implements OnInit {
 
    constructor(
     private router: Router,
-    private auth: AuthService,
     private TemaService: TemaService,
     private PostagemService: PostagemService,
     private NewsApiService: NewsApiService,
@@ -116,25 +116,35 @@ export class PrincipalComponent implements OnInit {
 
   cadastrar(){
     document.body.style.paddingRight='0px'
-    if (this.tipoTema == null) {
-      this.alertas.showAlertInfo('Escolha um tipo de tema!')
-    } else if (this.tema.descricaoTema == null){
-      this.alertas.showAlertInfo('Digite um tema para cadastrar!')
-    } else {
-      this.alertas.showAlertSuccess('Tema novo cadastrado com sucesso!')
-      this.tema.tipoTema = this.tipoTema
-    
-      this.TemaService.postTema(this.tema).subscribe((resp:Tema) =>{
-        this.tema = resp
-        
-        this.tema = new Tema()
-        this.findAllTema()
-        
-      })
+    for(let item of this.listaTema){
+      if(this.tema.descricaoTema == item.descricaoTema){
+        this.temaRepetido = true
+        break
     }
-
+      else{
+        this.temaRepetido = false
+      }
+    }
+    if(this.temaRepetido){
+      this.alertas.showAlertInfo('Tema já cadastrado!')
+    }
+    else{
+      if (this.tipoTema == null) {
+        this.alertas.showAlertInfo('Escolha um tipo de tema!')
+      } else if (this.tema.descricaoTema == null){
+        this.alertas.showAlertInfo('Digite um tema para cadastrar!')
+      } else {
+        this.alertas.showAlertSuccess('Tema novo cadastrado com sucesso!')
+        this.tema.tipoTema = this.tipoTema
       
-  }
+        this.TemaService.postTema(this.tema).subscribe((resp:Tema) =>{
+          this.tema = resp
+          this.tema = new Tema()
+          this.findAllTema()
+        })
+      }
+    }
+    }
 
   postar(){
     if (this.tema.tipoTema == null) {
@@ -203,3 +213,4 @@ export class PrincipalComponent implements OnInit {
   //     })
   //     }
   //   }
+}
