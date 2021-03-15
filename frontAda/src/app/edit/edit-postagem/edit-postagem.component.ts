@@ -23,7 +23,8 @@ export class EditPostagemComponent implements OnInit {
   idTema:number
   atualizarTemaPostagem: string
   tipoTema: string
-  // data: Date = new Date()
+  data: Date = new Date()
+
 
   constructor(
     private router:Router,
@@ -61,6 +62,7 @@ export class EditPostagemComponent implements OnInit {
   }
   
   atualizar(){
+    this.postagem.dataHora = new Date()
     this.PostagemService.putPostagem(this.postagem).subscribe((resp: Postagem)=>{
       this.postagem = resp
       this.alertas.showAlertSuccess('Postagem atualizada com sucesso!')

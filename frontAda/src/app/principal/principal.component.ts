@@ -56,10 +56,12 @@ export class PrincipalComponent implements OnInit {
     private TemaService: TemaService,
     private PostagemService: PostagemService,
     private NewsApiService: NewsApiService,
-    private alertas: AlertasService
+    private alertas: AlertasService,
+    public auth: AuthService
   ) {}
 
   ngOnInit() {
+    
     if (environment.token == '') {
       this.alertas.showAlertInfo('Sua sessão expirou!')
       this.router.navigate(['/entrar'])
@@ -113,29 +115,46 @@ export class PrincipalComponent implements OnInit {
   }
 
   cadastrar(){
-    this.tema.tipoTema = this.tipoTema
-  
-    this.TemaService.postTema(this.tema).subscribe((resp:Tema) =>{
-      this.tema = resp
+    document.body.style.paddingRight='0px'
+    if (this.tipoTema == null) {
+      this.alertas.showAlertInfo('Escolha um tipo de tema!')
+    } else if (this.tema.descricaoTema == null){
+      this.alertas.showAlertInfo('Digite um tema para cadastrar!')
+    } else {
+      this.alertas.showAlertSuccess('Tema novo cadastrado com sucesso!')
+      this.tema.tipoTema = this.tipoTema
+    
+      this.TemaService.postTema(this.tema).subscribe((resp:Tema) =>{
+        this.tema = resp
+        
+        this.tema = new Tema()
+        this.findAllTema()
+        
+      })
+    }
+
       
-      this.findAllTema()
-      this.tema = new Tema()
-    })
   }
 
   postar(){
-    this.tema.id = this.idTema
-    this.postagem.tema = this.tema
-    this.user.id = this.idUser
-    this.postagem.usuario = this.user
+    if (this.tema.tipoTema == null) {
+      this.alertas.showAlertInfo('Escolha um tema para postar!')
+    } else if (this.postagem.descricaoPostagem == null) {
+      this.alertas.showAlertInfo('Escreva uma postagem para postar!')
+    } else {
+      this.tema.id = this.idTema
+      this.postagem.tema = this.tema
+      this.user.id = this.idUser
+      this.postagem.usuario = this.user
 
-    this.PostagemService.postPostagem(this.postagem).subscribe((resp:Postagem) =>{
-      this.postagem = resp
-      this.alertas.showAlertSuccess('Postagem realizada com sucesso!')
-      this.postagem = new Postagem()
-      this.findAllPostagem()
-      this.findByIdUser()
-    })
+      this.PostagemService.postPostagem(this.postagem).subscribe((resp:Postagem) =>{
+        this.postagem = resp
+        this.alertas.showAlertSuccess('Postagem realizada com sucesso!')
+        this.postagem = new Postagem()
+        this.findAllPostagem()
+        this.findByIdUser()
+      })
+    }    
   }
 
   findByDescricaoPostagem() {
@@ -154,4 +173,33 @@ export class PrincipalComponent implements OnInit {
       this.listaNoticia = articlesResult
     })
   }
-}
+
+  deleteTemaById(id: number){
+    this.TemaService.deleteTema(id).subscribe(() => {
+      this.PostagemService.deletePostagem(id)
+      this.alertas.showAlertSuccess('Tema deletado com sucesso!')
+      this.findAllPostagem() 
+      this.findAllTema()
+    })
+  }
+
+  // findByDescricaoTema() {
+  //   if (this.busca == '') {
+  //     this.findAllTema()
+  //   } else {
+  //     this.TemaService.getByDescricaoTema(this.busca).subscribe((resp: Tema[]) => {
+  //       this.listaTema = resp
+  //     })
+  //   }
+  // }
+
+  // findByTipoTema() {
+  //   if (this.busca == '') {
+  //     this.findAllTema()
+  //   } else {
+  //     this.TemaService.getByTipoTema(this.busca).subscribe((resp: Tema[]) => {
+  //     this.listaTema=this.listaTema.concat(resp)
+  //     this.listaTema = this.listaTema.reverse()
+  //     })
+  //     }
+  //   }

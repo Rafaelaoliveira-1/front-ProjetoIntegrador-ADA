@@ -37,4 +37,13 @@ export class AuthService {
     return this.http.put<Usuario>('http://localhost:8080/usuario', usuario)
   }
 
+  adm() {
+    let ok: boolean = false
+
+    if (environment.tipo == 'adm'){
+      ok = true
+    }
+    return ok
+  }
+
 }
