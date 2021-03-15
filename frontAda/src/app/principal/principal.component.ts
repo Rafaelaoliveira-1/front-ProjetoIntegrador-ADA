@@ -27,16 +27,20 @@ export class PrincipalComponent implements OnInit {
   listaTema:Tema[]
   listaTemaModal:Tema[]
   listaNoticia: any[]
+  listaUsuario:Usuario[]
+  listaConexao:Usuario[]
+  indice:number
 
   busca: string
 
   tipoTema: string
   tipoPostagem: string
+  contaPostagem: number
+  contaConexoes:number
 
   idTema:number
   idPostagem:number
   idUser = environment.id
-  idcheck:number
 
   nomeCompleto = environment.nomeCompleto
   foto = environment.foto
@@ -46,8 +50,9 @@ export class PrincipalComponent implements OnInit {
   key = 'dataHora'
   reverse = true
 
-  constructor(
+   constructor(
     private router: Router,
+    private auth: AuthService,
     private TemaService: TemaService,
     private PostagemService: PostagemService,
     private NewsApiService: NewsApiService,
@@ -56,7 +61,7 @@ export class PrincipalComponent implements OnInit {
   ) {}
 
   ngOnInit() {
-
+    
     if (environment.token == '') {
       this.alertas.showAlertInfo('Sua sessão expirou!')
       this.router.navigate(['/entrar'])
@@ -65,6 +70,9 @@ export class PrincipalComponent implements OnInit {
 
     this.findAllPostagem()
     this.findAllTema()
+    this.findAllUsuario()
+    this.findByIdUser()
+    
   }
 
   findAllPostagem(){
@@ -79,15 +87,25 @@ export class PrincipalComponent implements OnInit {
       this.listaTemaModal = resp.reverse()
     })
   }
+  findByIdUser(){
+    this.auth.getByIdUser(this.id).subscribe((resp: Usuario)=>{
+      this.user = resp
+      this.listaPostagem = this.user.postagem
+      this.contaPostagem = this.listaPostagem.length
+    })
+  }
+  findAllUsuario(){
+    this.auth.getAllUser().subscribe((resp:Usuario[])=>{
+      this.listaUsuario = resp
+      this.contaConexoes = (this.listaUsuario.length - 1)
+      this.listaUsuario.splice(environment.id-1,1)
+      this.listaUsuario = this.listaUsuario.slice(0,6)
+    })
+  }
 
   tipoTheme(event: any){
     this.tipoTema = event.target.value
   }
-  // implementação
-  // editarPostagem(event:any){
-  // this.idPostagem = event.target.id
-  //  console.log(this.idPostagem)
-  // }
 
   selecionar(event:any){
     this.idTema = event.target.id
@@ -134,9 +152,9 @@ export class PrincipalComponent implements OnInit {
         this.alertas.showAlertSuccess('Postagem realizada com sucesso!')
         this.postagem = new Postagem()
         this.findAllPostagem()
+        this.findByIdUser()
       })
     }    
-
   }
 
   findByDescricaoPostagem() {
@@ -185,5 +203,3 @@ export class PrincipalComponent implements OnInit {
   //     })
   //     }
   //   }
-
-}

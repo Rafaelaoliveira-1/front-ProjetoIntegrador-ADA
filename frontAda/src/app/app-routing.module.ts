@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { CadastrarComponent } from './cadastrar/cadastrar.component';
+import { ConexaoComponent } from './conexao/conexao.component';
 import { EditPostagemComponent } from './edit/edit-postagem/edit-postagem.component';
 import { EditUsuarioComponent } from './edit/edit-usuario/edit-usuario.component';
 import { EntrarComponent } from './entrar/entrar.component';
@@ -18,7 +19,8 @@ const routes: Routes = [
   {path: 'home', component: HomeComponent},
   {path: 'edit-usuario/:id', component: EditUsuarioComponent},
   {path: 'edit-postagem/:id', component: EditPostagemComponent},
-  {path: 'perfil', component: PerfilComponent}
+  {path: 'perfil', component: PerfilComponent},
+  {path: 'conexao/:id',component: ConexaoComponent}
 ];
 
 @NgModule({

@@ -118,17 +118,16 @@ input {
   font-family: "Montserrat", sans-serif;
   letter-spacing: 1px;
 }
-.botaoEditarPerfil:hover{
+.botaoEditarPerfil:hover {
   background: #e79e00f6;
 }
 
-
-button:hover{
-  background:#75277c;
+button:hover {
+  background: #75277c;
   color: white;
 }
 
-#btnEditarPerfil:hover{
+#btnEditarPerfil:hover {
   background: #e79e00f6;
   color: black;
 }
@@ -170,10 +169,43 @@ button:hover{
   color: white;
   font-family: "Roboto", sans-serif;
 }
-.conexao-foto{
+.conexao-foto {
   width: 70px;
   height: 70px;
 }
+.conexoes-postagens {
+  text-align: left;
+  padding-left: 35px;
+}
+
+.titulo-card {
+  padding: 8px;
+}
+.foto-conexao {
+  width: 70px;
+  height: 70px;
+}
+
+.conexoes {
+  border-radius: 2rem;
+  background-color: #cd9ccc;
+  box-shadow: #acacac 4px 4px 8px;
+}
+.conexoes a {
+  text-decoration: none;
+  color: #000000;
+}
+.conexoes a img:hover {
+  transform: scale(1.1);
+}
+.conexoes a img:hover {
+  transition: all 0.3s ease-out;
+}
+
+.fs-c {
+  font-size: 13px;
+}
+/* Fim Conexão*/
 .bg-roxo {
   background-color: #89458f;
 }

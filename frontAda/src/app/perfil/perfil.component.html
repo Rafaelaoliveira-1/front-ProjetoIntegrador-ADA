@@ -60,12 +60,12 @@
                                     <h4 class="mt-0">{{cargo}}</h4>
 
                                     <p class="fp">
-                                        <span class="pr-5">25 conexões</span>                                        
+                                        <span class="pr-5">{{contaConexoes}} conexões</span>                                        
                                         
                                         <a class="pr-5 text-white" href="{{link}}" target="_blank">Link do Github</a>
 
                                         Ingressou em Março de 2021 <br>
-                                        12 postagens
+                                        {{contaPostagem}} postagens
                                     </p>
                                 </div>
                                 <div class="d-flex justify-content-end align-self-start">
@@ -134,34 +134,21 @@
         <!-- COLUNA CONEXÕES-->
         <div class="col-md-3">
            
-            <div class="card conexoes mt-5" style="width: 270px; height: 400px;">
+            <div class="card conexoes mt-5  " style="width: 270px;">
     
-                <h4 class="text-center pt-3 font-weight-bold">Conexões</h4> 
+                <h4 class="text-center pt-3 font-weight-bold p-0">Conexões</h4> 
                 
                 <hr>
-                
+    
                 <div class="row text-center px-3">
-    
-                    <div class="col-md-6">
-                        <img src="https://i.imgur.com/20PfQdL.jpg" alt="" class="img-fluid bs conexao-foto rounded-circle ">
-                        <h6 class="fs-c mt-2"> Juliana Serdan </h6>
-                        <img src="https://i.imgur.com/yNcdiBw.jpg" alt="" class="img-fluid bs conexao-foto rounded-circle ">
-                        <h6 class="fs-c mt-2"> Heloisa Beatriz </h6>
-                        <img src="https://i.imgur.com/U4l29Sr.jpg" alt="" class="img-fluid bs conexao-foto rounded-circle ">
-                        <h6 class="fs-c mt-2"> Jackeline Akemi </h6>
-                    </div>
-    
-                    <div class="col-md-6">
-                        <img src="https://i.imgur.com/55rP31I.jpg"  alt="" class="img-fluid bs conexao-foto rounded-circle ">
-                        <h6 class="fs-c mt-2"> Beatriz Martins </h6>
-                        <img src="https://i.imgur.com/kxS2saL.jpg"  alt="" class="img-fluid bs conexao-foto rounded-circle ">
-                        <h6 class="fs-c mt-2"> Bárbara Liboni </h6>
-                        <img src="https://i.imgur.com/KiZPmF1.jpg"  alt="" class="img-fluid bs conexao-foto rounded-circle ">
-                        <h6 class="fs-c mt-2"> Venôrica Almenara</h6>
-                    </div>
-    
+                    <div class="col-md-6" *ngFor = 'let item of listaUsuario'>
+                        <a [routerLink]="['/conexao',item.id]">
+                            <img src="{{item.foto}}" alt="" class="img-fluid rounded-circle bs foto-conexao">
+                            <h6 class="fs-c mt-2"> {{item.nomeCompleto}} </h6>
+                        </a>
+                    </div>   
                 </div>
-            </div>      
+            </div>   
 
         </div> <!-- FIM col-md-3-->
     </div>
