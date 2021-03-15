@@ -35,6 +35,8 @@ export class PrincipalComponent implements OnInit {
 
   tipoTema: string
   tipoPostagem: string
+  contaPostagem: number
+  contaConexoes:number
 
   idTema:number
   idPostagem:number
@@ -48,9 +50,7 @@ export class PrincipalComponent implements OnInit {
   key = 'dataHora'
   reverse = true
 
-  //contaPostagem: number
-
-  constructor(
+   constructor(
     private router: Router,
     private auth: AuthService,
     private TemaService: TemaService,
@@ -69,6 +69,7 @@ export class PrincipalComponent implements OnInit {
     this.findAllPostagem()
     this.findAllTema()
     this.findAllUsuario()
+    this.findByIdUser()
     
   }
 
@@ -84,10 +85,17 @@ export class PrincipalComponent implements OnInit {
       this.listaTemaModal = resp.reverse()
     })
   }
-
+  findByIdUser(){
+    this.auth.getByIdUser(this.id).subscribe((resp: Usuario)=>{
+      this.user = resp
+      this.listaPostagem = this.user.postagem
+      this.contaPostagem = this.listaPostagem.length
+    })
+  }
   findAllUsuario(){
     this.auth.getAllUser().subscribe((resp:Usuario[])=>{
       this.listaUsuario = resp
+      this.contaConexoes = this.listaUsuario.length
       this.listaUsuario.splice(environment.id-1,1)
       this.listaUsuario = this.listaUsuario.slice(0,6)
     })
@@ -131,21 +139,9 @@ export class PrincipalComponent implements OnInit {
       this.alertas.showAlertSuccess('Postagem realizada com sucesso!')
       this.postagem = new Postagem()
       this.findAllPostagem()
-      //this.contadorPublicacoes()
+      this.findByIdUser()
     })
   }
-// lógica do gustavo
-//   contadorPublicacoes(){
-//     this.contaPostagem += 1
-//  }
-
-//   retiraPublicacoes(){
-//     this.contaPostagem -= 1
-//   }
-
-contaPostagem(){
-  
-}
 
   findByDescricaoPostagem() {
     if (this.busca == '') {
@@ -162,28 +158,4 @@ contaPostagem(){
       this.listaNoticia = articlesResult
     })
   }
-
-  // findByDescricaoTema() {
-  //   if (this.busca == '') {
-  //     this.findAllTema()
-  //   } else {
-  //     this.TemaService.getByDescricaoTema(this.busca).subscribe((resp: Tema[]) => {
-  //       this.listaTema = resp
-  //     })
-  //   }
-  // }
-
-  // findByTipoTema() {
-  //   if (this.busca == '') {
-  //     this.findAllTema()
-  //   } else {
-  //     this.TemaService.getByTipoTema(this.busca).subscribe((resp: Tema[]) => {
-  //     this.listaTema=this.listaTema.concat(resp)
-  //     this.listaTema = this.listaTema.reverse()
-  //     })
-  //     }
-  //   }
-
-
-
 }

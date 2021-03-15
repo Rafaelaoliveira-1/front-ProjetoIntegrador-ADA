@@ -26,6 +26,8 @@ export class PerfilComponent implements OnInit {
 
   tipoTema: string
   tipoPostagem: string
+  contaPostagem:number
+  contaConexoes:number
 
   idTema:number
   idUser = environment.id
@@ -63,11 +65,13 @@ export class PerfilComponent implements OnInit {
     this.auth.getByIdUser(this.id).subscribe((resp: Usuario)=>{
       this.user = resp
       this.listaPostagem = this.user.postagem.reverse()
+      this.contaPostagem = this.listaPostagem.length
     })
   }
   findAllUsuario(){
     this.auth.getAllUser().subscribe((resp:Usuario[])=>{
       this.listaUsuario = resp
+      this.contaConexoes = (this.listaUsuario.length - 1)
       this.listaUsuario.splice(environment.id-1,1)
       this.listaUsuario = this.listaUsuario.slice(0,6)
     })
