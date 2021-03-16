@@ -33,6 +33,9 @@ export class PerfilComponent implements OnInit {
   idUser = environment.id
   idcheck:number
 
+  key = 'dataHora'
+  reverse = true
+
   nomeCompleto = environment.nomeCompleto
   foto = environment.foto
   cargo = environment.cargo
@@ -64,7 +67,7 @@ export class PerfilComponent implements OnInit {
   findByIdUser(){
     this.auth.getByIdUser(this.id).subscribe((resp: Usuario)=>{
       this.user = resp
-      this.listaPostagem = this.user.postagem.reverse()
+      this.listaPostagem = this.user.postagem
       this.contaPostagem = this.listaPostagem.length
     })
   }

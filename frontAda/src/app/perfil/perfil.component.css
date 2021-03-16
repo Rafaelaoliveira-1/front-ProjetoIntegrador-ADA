@@ -7,6 +7,7 @@
   border: none;
   border-radius: 10px;
   width: 300px;
+  margin-right: 70px;
 }
 
 #txtBusca {
@@ -21,6 +22,10 @@
 #btnBusca {
   display: flex;
   align-items: flex-end;
+}
+
+#divBusca input{
+  font-size: 0.9rem;
 }
 
 li {
@@ -238,3 +243,83 @@ button:hover {
   text-decoration: none;
   color: #3a0d3d;
 }
+@media(min-width:992px) and (max-width:1199.98px){
+  #content{
+    display: flex;
+    justify-content: center;
+    margin: auto;
+  }
+  .botaoEditarPerfil{
+    margin-left: 16px !important;
+  }
+  #card-perfil{
+    display: flex;
+    justify-content: center;
+  }
+  .fontNomeCargo h1,
+  .fontNomeCargo h4,
+  .fontNomeCargo p{
+    text-align: center;
+  }
+  .fp .pr-5{
+    padding-right: 9px !important;
+  }
+  #data{
+    display: inline-block;
+  }
+}
+@media (min-width: 768px) and (max-width:991.98px){
+  .container, .container-fluid, .container-lg, .container-md, .container-sm, .container-xl{
+    margin-right: 0px;
+    margin-left: 0px;
+  }
+  #content{
+    display: flex;
+    justify-content: center;
+    margin: auto;
+  }
+  #card-perfil{
+    display: flex;
+    justify-content: center;
+  }
+  .botaoEditarPerfil{
+    margin-left: 20px !important;
+  }
+  .fontNomeCargo h1,
+  .fontNomeCargo h4,
+  .fontNomeCargo p{
+    text-align: center;
+  }
+  .fp .pr-5{
+    padding-right: 9px !important;
+  }
+  #data{
+    display: inline-block;
+  }
+}
+@media(max-width:767.98px){
+  #content{
+    width: 100vw;
+    margin: auto;
+  }
+  #card-perfil{
+    display: flex;
+    justify-content: center;
+  }
+  .botaoEditarPerfil{
+    margin-left: 0px !important;
+  }
+  .fontNomeCargo h1,
+  .fontNomeCargo h4,
+  .fontNomeCargo p {
+    text-align: center;
+  }
+  .fp .pr-5{
+    padding-right: 9px !important;
+  }
+  #data{
+    display: inline-block;
+  }
+
+}
+
