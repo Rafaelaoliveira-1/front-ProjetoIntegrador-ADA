@@ -1,19 +1,19 @@
-<nav class="navbar navbar-expand-lg navbar-light d-flex back sticky-top">
-    <a class="navbar-brand" href="#">
+<nav class="navbar navbar-expand-lg navbar-light d-flex justify-content-between back sticky-top">
+    <a class="navbar-brand" routerLink='/principal'>
         <img src="../../assets/img/logo-cortado-roxo.jpg" style="height: 35pt;" alt="logo-ada-roxo">
     </a>
 
-    <div class="collapse navbar-collapse d-flex justify-content-center" id="navbarSupportedContent">
-        <div id="divBusca" style="width: 440px;">
-            <form class="form-inline my-2 my-lg-0">
-                <input id="pesquisa" [(ngModel)]='busca'  [ngModelOptions]="{standalone: true}" class="form-control mr-sm-2" id="txtBusca" style="width: 300pt; height: 35px;" type="text"
+
+        <div id="divBusca" style="width: 300px;">
+            <form class="form-inline my-md-0">
+                <input id="pesquisa" [(ngModel)]='busca'  [ngModelOptions]="{standalone: true}" class="form-control mr-sm-2" id="txtBusca" style="width: 200pt; height: 35px;" type="text"
                     placeholder="  pesquisar..." aria-label="Search">
                 <a class="lupa-busca">
                     <img (click)='findByDescricaoPostagem()' src="../../assets/img/img-search.png" id="btnBusca" style="height: 20px;" alt="">
                 </a>
             </form>
         </div>
-    </div>
+
     <li class="nav-item dropdown mr-1">
         <a class="nav-link" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
             aria-expanded="false">
@@ -27,11 +27,11 @@
     </li>
 </nav>
 
-<div class="container-fluid">
+<div id="content" class="container-fluid">
     <!-- Cards-->
     <div id="cards" class="container">
         <div id="container" class="row">
-            <div class="col-sm-3 d-none d-sm-block">
+            <div class="col-lg-3">
                 <section id="noticias" class="sticky">
                     <h4 class="text-center mont">Notícias</h4>
                     
@@ -107,7 +107,7 @@
             </div>
     
             <!-- INICIO -->
-            <div id="publicacoes" class="col-md-6">
+            <div id="publicacoes" class="col-lg-6 col-md-8">
                 <div class="card-back card" style=" height: 18.5rem;">
                     <h5 class="txt pl-4 pt-1 mb-0">Criar Publicação</h5>
                     <hr class="mt-2">
@@ -138,7 +138,7 @@
                 
 
                     <!-- <div *ngFor = 'let tema of listaTema '> -->
-                        <div *ngFor='let item of listaPostagem'>
+                        <div *ngFor='let item of listaPostagem  | orderBy: key : reverse'>
                             <div class="card-back card mt-5 mb-5 ">
                                 
                                 <div class="row d-flex flex-row">
@@ -177,7 +177,7 @@
             <!-- Fim da div da col-md-6  -->  
             </div>
             <!-- FIM -->    
-            <div class="col-md-3 bg-white ">
+            <div class="col-lg-3 col-md-3 bg-white ">
     <!-- PERFIL ========================================================================================== -->
             <!-- Parte de cima do card com o tamanho para caber com a parte de baixo, e define as bordas de cima-->
             <section id="perfil" class="sticky">
@@ -191,7 +191,7 @@
         
                 </div>
                 <!-- Parte de baixo do card com tamanho para caber com a parte de cima-->
-                <div class="card perfil-texto bg-roxo sh" style="width: 270px; height: 240px;">
+                <div class="card perfil-texto bg-roxo sh" style="width: 270px;">
                     <!-- Parter que centraliza os textos do card -->
                     <div class="card-body text-center">
                         <!-- Parte de baixo do card com tamanho para caber com a parte de cima, e define as bordas de baixo -->
@@ -290,6 +290,7 @@
         </section>
         </div>
     </div>
+</div>
 </div>
 
 

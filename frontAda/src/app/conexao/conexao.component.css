@@ -7,6 +7,7 @@
     border: none;
     border-radius: 10px;
     width: 300px;
+    margin-right: 70px;
   }
   
   #txtBusca {
@@ -21,6 +22,9 @@
   #btnBusca {
     display: flex;
     align-items: flex-end;
+  }
+  #divBusca input{
+    font-size: 0.9rem;
   }
   
   li {
@@ -207,4 +211,21 @@
     text-decoration: none;
     color: #3a0d3d;
   }
-  
+  @media(max-width:991.98px){
+    
+  #card-perfil{
+    display: flex;
+    justify-content: center;
+  }
+  .fontNomeCargo h1,
+  .fontNomeCargo h4,
+  .fontNomeCargo p{
+    text-align: center;
+  }
+  .fp .pr-5{
+    padding-right: 9px !important;
+  }
+  #data{
+    display: inline-block;
+  }
+  }

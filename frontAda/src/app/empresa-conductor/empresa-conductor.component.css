@@ -1,12 +1,12 @@
 .back {
     background-color: #89458f;
   }
-  
   #divBusca {
     background-color: white;
     border: none;
     border-radius: 10px;
     width: 300px;
+    margin-right: 70px;
   }
   
   #txtBusca {
@@ -16,6 +16,9 @@
     border: none;
     height: 32px;
     width: 260px;
+  }
+  #divBusca input{
+    font-size: 0.9rem;
   }
   
   #btnBusca {
@@ -237,5 +240,24 @@
   #footer a:hover {
     text-decoration: none;
     color: #3a0d3d;
+  }
+  @media(max-width:1199.98px){
+    #empresas{
+      display: none;
+    }
+    #content{
+      display: flex;
+      justify-content: center;
+    }
+  }
+  @media(max-width:767.98px){
+    #card-perfil{
+      display: flex;
+      justify-content: center;
+    }
+    #card-perfil h1,
+    #card-perfil h4{
+      text-align: center;
+    }
   }
   

@@ -7,6 +7,7 @@
   border: none;
   border-radius: 10px;
   width: 300px;
+  margin-right: 70px;
 }
 
 #txtBusca {
@@ -16,6 +17,9 @@
   border: none;
   height: 32px;
   width: 260px;
+}
+#divBusca input{
+  font-size: 0.9rem;
 }
 
 #btnBusca {
@@ -276,6 +280,24 @@ button:hover {
 .deletarTema:hover {
   background: rgb(204, 33, 33);
 }
+@media (min-width: 768px) and (max-width:991.98px){
+    /* Noticias */
+    #noticias {
+      display: none;
+    }
+    .container, .container-fluid, .container-lg, .container-md, .container-sm, .container-xl{
+      margin-right: 0px;
+      margin-left: 0px;
+    }
+    .sticky{
+      position: sticky;
+      top:100px;
+    }
+    #content{
+      display: flex;
+      justify-content: center ;
+    }
+}
 
 @media (max-width: 767px) {
   /* Layout pagina principal */
@@ -284,7 +306,13 @@ button:hover {
     flex-direction: column-reverse;
     align-items: center;
   }
-
+  /* Barra de navegação */
+  #divBusca{
+    width: 300px !important;
+  }
+  #pesquisa{
+    width: 200pt !important;
+  }
   /* Card perfil */
   #perfil {
     display: flex;

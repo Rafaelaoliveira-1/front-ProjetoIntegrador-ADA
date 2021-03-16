@@ -1,27 +1,18 @@
 <!-- NAVEGADOR -->
 
-<!-- COMENTÁRIO PARA APAGAR DEPOIS-->
-
-<nav class="navbar navbar-expand-lg navbar-light back">
+<nav class="navbar navbar-expand-lg navbar-light d-flex justify-content-between back sticky-top">
     <a class="navbar-brand" routerLink='/principal'>
         <img src="../../assets/img/logo-cortado-roxo.jpg" style="height: 35pt;" alt="logo-ada-roxo">
     </a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-    </button>
-
-    <div class="collapse navbar-collapse d-flex justify-content-center" id="navbarSupportedContent">
-        <div id="divBusca" style="width: 440px;">
-            <form class="form-inline my-2 my-lg-0">
-                <input class="form-control mr-sm-2" id="txtBusca" style="width: 300pt; height: 35px;" type="text"
+        <div id="divBusca" style="width: 300px;">
+            <form class="form-inline my-md-0">
+                <input id="pesquisa" class="form-control mr-sm-2" id="txtBusca" style="width: 200pt; height: 35px;" type="text"
                     placeholder="  pesquisar..." aria-label="Search">
-                <a href="">
+                <a class="lupa-busca">
                     <img src="../../assets/img/img-search.png" id="btnBusca" style="height: 20px;" alt="">
                 </a>
             </form>
         </div>
-    </div>
 
     <li class="nav-item dropdown mr-1">
         <a class="nav-link" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
@@ -39,10 +30,10 @@
 <!-- FIM NAVEGADOR -->
 
 <!-- MEU PERFIL -->
-<div class="container mt-3">
+<div id="content" class="container mt-3">
     <div class="row">
         <!-- COLUNA MENU & POSTAGENS -->
-        <div class="col-md-9">
+        <div class="col-sm-12 col-md-8 col-lg-8 col-xl-9">
      
             <div class="card perfil-fundo d-flex ml-3 mt-5">
             
@@ -50,7 +41,7 @@
 
                     <div class="card-header mt-4">
 
-                            <div class="row d-flex flex-row ">
+                            <div id="card-perfil" class="row d-flex flex-row ">
             
                                 <img src="{{foto}}" alt="Foto de perfil {{nomeCompleto}}" class="img-fluid rounded-circle bs ml-4 foto-perfil mb-4">
             
@@ -64,7 +55,7 @@
                                         
                                         <a class="pr-5 text-white" href="{{link}}" target="_blank">Link do Github</a>
 
-                                        Ingressou em Março de 2021 <br>
+                                       <span id="data"> Ingressou em Março de 2021</span> <br>
                                         {{contaPostagem}} postagens
                                     </p>
                                 </div>
@@ -89,7 +80,7 @@
                         <h2 class="mont font-weight-bold">Minhas Postagens</h2>
 
                     </div>
-                        <div id="postagem" *ngFor='let item of listaPostagem'>
+                        <div id="postagem" *ngFor='let item of listaPostagem | orderBy: key: reverse'>
                             <div class="card-back d-flex flex-column ml-5 mr-5 mt-5">
 
                                 <div class="row d-flex">
@@ -125,23 +116,20 @@
                                               
                     
                 <!-- FIM DA COLUNA 9-->
-                </div>
-                            
+                </div>                           
             </div>
-
         </div>
-
         <!-- COLUNA CONEXÕES-->
-        <div class="col-md-3">
+        <div class="col-md-4 col-lg-4 col-xl-3">
            
-            <div class="card conexoes mt-5  " style="width: 270px;">
+            <div class="card conexoes mt-5">
     
                 <h4 class="text-center pt-3 font-weight-bold p-0">Conexões</h4> 
                 
                 <hr>
     
                 <div class="row text-center px-3">
-                    <div class="col-md-6" *ngFor = 'let item of listaUsuario'>
+                    <div class="col-6" *ngFor = 'let item of listaUsuario'>
                         <a [routerLink]="['/conexao',item.id]">
                             <img src="{{item.foto}}" alt="" class="img-fluid rounded-circle bs foto-conexao">
                             <h6 class="fs-c mt-2"> {{item.nomeCompleto}} </h6>
@@ -152,7 +140,7 @@
 
         </div> <!-- FIM col-md-3-->
     </div>
-</div> 
+</div>
 
 <div id="footer" class="row text-center mt-5">
     <div class="col-md-12">

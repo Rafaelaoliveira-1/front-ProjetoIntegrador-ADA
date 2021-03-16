@@ -77,7 +77,7 @@ export class PrincipalComponent implements OnInit {
 
   findAllPostagem(){
     this.PostagemService.getAllPostagem().subscribe((resp: Postagem[])=>{
-      this.listaPostagem = resp.reverse()
+      this.listaPostagem = resp
     })
   }
 
