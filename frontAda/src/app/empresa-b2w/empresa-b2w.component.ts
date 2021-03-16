@@ -64,7 +64,6 @@ export class EmpresaB2wComponent implements OnInit {
   findByIdUser(){
     this.auth.getByIdUser(this.id).subscribe((resp: Usuario)=>{
       this.user = resp
-      this.listaPostagem = this.user.postagem.reverse()
       this.contaPostagem = this.listaPostagem.length
     })
   }
