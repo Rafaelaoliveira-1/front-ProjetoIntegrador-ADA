@@ -15,6 +15,13 @@ import { EditPostagemComponent } from './edit/edit-postagem/edit-postagem.compon
 import { PerfilComponent } from './perfil/perfil.component';
 import { OrderModule } from 'ngx-order-pipe';
 import { AlertasComponent } from './alertas/alertas.component';
+import { ConexaoComponent } from './conexao/conexao.component';
+import { EmpresaItauComponent } from './empresa-itau/empresa-itau.component';
+import { EmpresaMercadolivreComponent } from './empresa-mercadolivre/empresa-mercadolivre.component';
+import { EmpresaB2wComponent } from './empresa-b2w/empresa-b2w.component';
+import { EmpresaConductorComponent } from './empresa-conductor/empresa-conductor.component';
+import { EmpresaMagaluComponent } from './empresa-magalu/empresa-magalu.component';
+import { EmpresaMc1Component } from './empresa-mc1/empresa-mc1.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +33,14 @@ import { AlertasComponent } from './alertas/alertas.component';
     EditUsuarioComponent,
     EditPostagemComponent,
     PerfilComponent,
-    AlertasComponent
+    AlertasComponent,
+    ConexaoComponent,
+    EmpresaItauComponent,
+    EmpresaMercadolivreComponent,
+    EmpresaB2wComponent,
+    EmpresaConductorComponent,
+    EmpresaMagaluComponent,
+    EmpresaMc1Component
   ],
   imports: [
     BrowserModule,

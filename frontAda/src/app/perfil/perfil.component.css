@@ -7,6 +7,7 @@
   border: none;
   border-radius: 10px;
   width: 300px;
+  margin-right: 70px;
 }
 
 #txtBusca {
@@ -23,12 +24,19 @@
   align-items: flex-end;
 }
 
+#divBusca input{
+  font-size: 0.9rem;
+}
+
 li {
   list-style: none;
 }
 
 input {
   font-family: "Roboto", sans-serif;
+}
+.dropdown-item{
+  padding-left: 0;
 }
 
 /* Conexões */
@@ -118,17 +126,16 @@ input {
   font-family: "Montserrat", sans-serif;
   letter-spacing: 1px;
 }
-.botaoEditarPerfil:hover{
+.botaoEditarPerfil:hover {
   background: #e79e00f6;
 }
 
-
-button:hover{
-  background:#75277c;
+button:hover {
+  background: #75277c;
   color: white;
 }
 
-#btnEditarPerfil:hover{
+#btnEditarPerfil:hover {
   background: #e79e00f6;
   color: black;
 }
@@ -170,10 +177,43 @@ button:hover{
   color: white;
   font-family: "Roboto", sans-serif;
 }
-.conexao-foto{
+.conexao-foto {
   width: 70px;
   height: 70px;
 }
+.conexoes-postagens {
+  text-align: left;
+  padding-left: 35px;
+}
+
+.titulo-card {
+  padding: 8px;
+}
+.foto-conexao {
+  width: 70px;
+  height: 70px;
+}
+
+.conexoes {
+  border-radius: 2rem;
+  background-color: #cd9ccc;
+  box-shadow: #acacac 4px 4px 8px;
+}
+.conexoes a {
+  text-decoration: none;
+  color: #000000;
+}
+.conexoes a img:hover {
+  transform: scale(1.1);
+}
+.conexoes a img:hover {
+  transition: all 0.3s ease-out;
+}
+
+.fs-c {
+  font-size: 13px;
+}
+/* Fim Conexão*/
 .bg-roxo {
   background-color: #89458f;
 }
@@ -203,3 +243,83 @@ button:hover{
   text-decoration: none;
   color: #3a0d3d;
 }
+@media(min-width:992px) and (max-width:1199.98px){
+  #content{
+    display: flex;
+    justify-content: center;
+    margin: auto;
+  }
+  .botaoEditarPerfil{
+    margin-left: 16px !important;
+  }
+  #card-perfil{
+    display: flex;
+    justify-content: center;
+  }
+  .fontNomeCargo h1,
+  .fontNomeCargo h4,
+  .fontNomeCargo p{
+    text-align: center;
+  }
+  .fp .pr-5{
+    padding-right: 9px !important;
+  }
+  #data{
+    display: inline-block;
+  }
+}
+@media (min-width: 768px) and (max-width:991.98px){
+  .container, .container-fluid, .container-lg, .container-md, .container-sm, .container-xl{
+    margin-right: 0px;
+    margin-left: 0px;
+  }
+  #content{
+    display: flex;
+    justify-content: center;
+    margin: auto;
+  }
+  #card-perfil{
+    display: flex;
+    justify-content: center;
+  }
+  .botaoEditarPerfil{
+    margin-left: 20px !important;
+  }
+  .fontNomeCargo h1,
+  .fontNomeCargo h4,
+  .fontNomeCargo p{
+    text-align: center;
+  }
+  .fp .pr-5{
+    padding-right: 9px !important;
+  }
+  #data{
+    display: inline-block;
+  }
+}
+@media(max-width:767.98px){
+  #content{
+    width: 100vw;
+    margin: auto;
+  }
+  #card-perfil{
+    display: flex;
+    justify-content: center;
+  }
+  .botaoEditarPerfil{
+    margin-left: 0px !important;
+  }
+  .fontNomeCargo h1,
+  .fontNomeCargo h4,
+  .fontNomeCargo p {
+    text-align: center;
+  }
+  .fp .pr-5{
+    padding-right: 9px !important;
+  }
+  #data{
+    display: inline-block;
+  }
+
+}
+

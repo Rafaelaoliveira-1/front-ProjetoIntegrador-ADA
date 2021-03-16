@@ -16,27 +16,27 @@ a:hover {
   color: #3a0d3d;
 }
 
-.conhecaMais{
+.conhecaMais {
   color: white;
   font-weight: bold;
 }
 
-.conhecaMais:hover{
+.conhecaMais:hover {
   color: #f2c7f5;
   font-weight: bold;
 }
 
-.acessoLinkedin{
+.acessoLinkedin {
   color: #211122;
   font-weight: bold;
 }
 
-.acessoLinkedin:hover{
+.acessoLinkedin:hover {
   text-decoration: none;
-  color:#3e0f42;
+  color: #3e0f42;
 }
 
-.teste:hover{
+.teste:hover {
   transform: scale(1.1);
   transition: transform 0.1s ease-out;
 }
@@ -100,12 +100,23 @@ a:hover {
   opacity: 1;
   cursor: pointer;
 }
+#parceiros a{
+  display: block;
+}
+#desenvolvedores{
+  border-bottom:1px solid #e9cfe9c9;
+  padding-bottom: 40px;
+
+}
 #desenvolvedores .card img {
   width: 270px;
   height: 270px;
   border-radius: 20px;
 }
-.card-text{
+#desenvolvedores a {
+  display: block;
+}
+.card-text {
   font-size: 14px;
 }
 .logo-facebook {
@@ -164,8 +175,53 @@ textarea {
   font-size: 15px;
 }
 
-.font-foot{
+.font-foot {
   font-family: "Montserrat", sans-serif;
   color: #89458f;
   font-weight: bold;
+}
+@media (max-width: 767px) {
+  /* Importância da rede */
+  #importancia-da-rede img {
+    width: 120%;
+  }
+
+  /* Desenvolvedores */
+  #desenvolvedores .card {
+    width: 180px;
+    height: 180px;
+  }
+  #desenvolvedores .card img {
+    width: 180px;
+    height: 180px;
+  }
+  #desenvolvedores .texto h5 {
+    font-size: 1rem;
+    font-weight: bold;
+    margin-bottom: 0px;
+    margin-top: 0px;
+  }
+  #desenvolvedores .texto p {
+    font-size: 0.6rem;
+  }
+
+  /* Fale Conosco */
+  .fale-conosco {
+    text-align: center;
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .fale-conosco h3 {
+    margin-bottom: 10px;
+  }
+  .fale-conosco input,
+  .fale-conosco textarea {
+    text-align: center;
+  }
+  .fale-conosco button {
+    align-self: center;
+    width: 50%;
+  }
 }

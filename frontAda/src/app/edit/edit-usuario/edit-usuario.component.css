@@ -7,6 +7,7 @@
   border: none;
   border-radius: 10px;
   width: 300px;
+  margin-right: 70px;
 }
 
 #txtBusca {
@@ -21,6 +22,12 @@
 #btnBusca {
   display: flex;
   align-items: flex-end;
+}
+.dropdown-item{
+  padding-left: 0;
+}
+#divBusca input{
+  font-size: 0.9rem;
 }
 
 li {

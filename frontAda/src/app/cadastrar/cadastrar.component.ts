@@ -37,11 +37,11 @@ export class CadastrarComponent implements OnInit {
   }
 
   tipoUser(event: any){
-    this.tipoUsuario = event.target.value
+    this.tipoUsuario = event.target.value 
   }
 
   cadastrar(){
-    this.usuario.tipo = this.tipoUsuario
+    this.usuario.tipo = "normal"
 
     if(this.usuario.senha != this.validaSenha){
       this.alertas.showAlertDanger('As senhas cadastradas não são iguais!')
